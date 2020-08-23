@@ -1,0 +1,14 @@
+\e[H\e[2J
+
+   \e[0;39;41m +============================================+ \e[0m
+   \e[0;39;41m |   YOU ARE ACCESSING A RESTRICTED SYSTEM    | \e[0m
+   \e[0;39;41m +============================================+ \e[0m
+   \e[0;39;41m |                                            | \e[0m
+   \e[0;39;41m | This system is for the use of authorized   | \e[0m
+   \e[0;39;41m | personnel only. Unauthorized access will   | \e[0m
+   \e[0;39;41m | be fully investigated and reported to the  | \e[0m
+   \e[0;39;41m | appropriate law enforcement agencies.      | \e[0m
+   \e[0;39;41m |                                            | \e[0m
+   \e[0;39;41m +============================================+ \e[0m
+
+\e[1;34m
