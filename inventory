@@ -1,0 +1,16 @@
+[workstations]
+crimson ansible_host=crimson
+carmine ansible_host=carmine
+
+[servers]
+coconut ansible_host=coconut
+copycat ansible_host=copycat
+chimera ansible_host=chimera
+caltrop ansible_host=caltrop
+
+[zaszi:children]
+workstations
+servers
+
+[zaszi:vars]
+ansible_user=zaszi
