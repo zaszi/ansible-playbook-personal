@@ -1,0 +1,102 @@
+---
+### COMMON - MAIN ###
+
+timezone: Europe/Brussels
+dracut: false
+
+### COMMON - PACKAGES ###
+
+arch: armv7
+packages:
+  - atop
+  - base-devel
+  - bash-completion
+  - bat
+  - exa
+  - fzf
+  - git
+  - htop
+  - jq
+  - ldns
+  - man
+  - ncdu
+  - neofetch
+  - neovim
+  - openssh
+  - p7zip
+  - pacman-contrib
+  - pkgfile
+  - python
+  - rng-tools
+  - rsync
+  - tcpdump
+  - tmux
+  - traceroute
+  - unrar
+  - unzip
+  - vim
+  - zip
+packages_aur:
+  - yay
+
+### USERS & GROUPS ###
+
+xdg: false
+groups:
+  - wheel
+  - network
+sudoers:
+  - wheel
+sshusers:
+  - network
+users:
+  - name: root
+    pass: zaszi/users/root
+    shell: /bin/bash
+    groups: []
+    pubkey: ""
+  - name: zaszi
+    pass: zaszi/users/zaszi
+    shell: /bin/bash
+    groups:
+      - network
+      - wheel
+    pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPPr0fLoUsl4H\
+      i4QO6IQeqzg647HS83FpbkRZsY+fCUd openpgp:0x7BFD3ED3"
+
+### COMMON - NETWORK ###
+
+wired: true
+wireless: false
+wifi_networks: []
+bridge: false
+bridge_interfaces: []
+firewall_tcp: []
+firewall_udp: []
+dns:
+  - 192.168.1.1
+dns_fallback:
+  - 9.9.9.9
+  - 149.112.112.112
+  - 2620:fe::fe
+  - 2620:fe::9
+ntp:
+  - 192.168.1.1
+ntp_fallback:
+  - 0.arch.pool.ntp.org
+  - 1.arch.pool.ntp.org
+  - 2.arch.pool.ntp.org
+  - 3.arch.pool.ntp.org
+
+### COMMON - SERVICES ###
+
+services:
+  - atop.service
+  - iptables.service
+  - ip6tables.service
+  - paccache.timer
+  - rngd.service
+  - sshd.service
+  - systemd-networkd.service
+  - systemd-resolved.service
+  - systemd-timesyncd.service

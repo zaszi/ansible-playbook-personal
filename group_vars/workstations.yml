@@ -1,0 +1,167 @@
+---
+### COMMON - MAIN ###
+
+timezone: Europe/Brussels
+dracut: true
+
+### COMMON - PACKAGES ###
+
+arch: auto
+packages:
+  - alacritty
+  - android-tools
+  - android-udev
+  - ansible
+  - ansible-lint
+  - arch-install-scripts
+  - atop
+  - bash-completion
+  - bat
+  - bluez
+  - bluez-utils
+  - ccid
+  - dosfstools
+  - exa
+  - firefox
+  - fzf
+  - git
+  - gnupg
+  - grim
+  - htop
+  - imv
+  - inetutils
+  - iwd
+  - jq
+  - ldns
+  - light
+  - ncdu
+  - neofetch
+  - neovim
+  - noto-fonts-emoji
+  - openssh
+  - openvpn
+  - p7zip
+  - pacman-contrib
+  - parted
+  - pass
+  - pkgfile
+  - playerctl
+  - prettier
+  - proselint
+  - pulseaudio
+  - pulseaudio-bluetooth
+  - pulsemixer
+  - python
+  - pwgen
+  - qrencode
+  - reflector
+  - rng-tools
+  - rsync
+  - rust-analyzer
+  - rustup
+  - shfmt
+  - slurp
+  - sway
+  - swaybg
+  - swaylock
+  - swayidle
+  - syncthing
+  - tcpdump
+  - teamspeak3
+  - texlive-core
+  - tmux
+  - traceroute
+  - ttf-font-awesome
+  - unrar
+  - unzip
+  - vint
+  - waybar
+  - wine
+  - wl-clipboard
+  - xdg-user-dirs
+  - xorg-server-xwayland
+  - yamllint
+  - zathura-pdf-mupdf
+  - zip
+packages_aur:
+  - ansible-aur-git
+  - nerd-fonts-iosevka
+  - pandoc-bin
+  - pulseaudio-ctl
+  - shellcheck-bin
+  - speccy
+  - ssh-audit
+  - starship
+  - wl-clipboard-x11
+  - yay
+
+### USERS & GROUPS ###
+
+xdg: true
+groups:
+  - wheel
+  - network
+sudoers:
+  - wheel
+sshusers:
+  - network
+users:
+  - name: root
+    pass: zaszi/users/root
+    shell: /bin/bash
+    groups: []
+    pubkey: ""
+  - name: zaszi
+    pass: zaszi/users/zaszi
+    shell: /bin/bash
+    groups:
+      - audio
+      - network
+      - kvm
+      - uucp
+      - video
+      - wheel
+    pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPPr0fLoUsl4H\
+      i4QO6IQeqzg647HS83FpbkRZsY+fCUd openpgp:0x7BFD3ED3"
+
+### COMMON - NETWORK ###
+
+wired: true
+wireless: false
+wifi_networks: []
+bridge: false
+bridge_interfaces: []
+firewall_tcp: []
+firewall_udp: []
+dns:
+  - 192.168.1.1
+dns_fallback:
+  - 9.9.9.9
+  - 149.112.112.112
+  - 2620:fe::fe
+  - 2620:fe::9
+ntp:
+  - 192.168.1.1
+ntp_fallback:
+  - 0.arch.pool.ntp.org
+  - 1.arch.pool.ntp.org
+  - 2.arch.pool.ntp.org
+  - 3.arch.pool.ntp.org
+
+### COMMON - SERVICES ###
+
+services:
+  - atop.service
+  - bluetooth.service
+  - fstrim.timer
+  - iptables.service
+  - ip6tables.service
+  - paccache.timer
+  - iwd.service
+  - pcscd.socket
+  - reflector.timer
+  - rngd.service
+  - sshd.service
+  - systemd-networkd.service
+  - systemd-resolved.service
+  - systemd-timesyncd.service
