@@ -1,0 +1,19 @@
+---
+extra_packages:
+  - broadcom-wl-dkms
+  - dkms
+extra_packages_aur: []
+
+bridge: true
+bridge_interfaces:
+  - "eno1"
+firewall_tcp:
+  # SSH
+  - 22
+  # Syncthing
+  - 22000
+firewall_udp:
+  # Wake-On-LAN
+  - 9
+  # Syncthing discovery broadcasts
+  - 21027

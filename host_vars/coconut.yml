@@ -1,0 +1,13 @@
+---
+extra_packages:
+  - syncthing
+extra_packages_aur: []
+
+firewall_tcp:
+  # SSH
+  - 22
+  # Syncthing
+  - 22000
+firewall_udp:
+  # Syncthing discovery broadcasts
+  - 21027

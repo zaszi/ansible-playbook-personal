@@ -1,0 +1,10 @@
+---
+extra_packages: []
+extra_packages_aur: []
+
+firewall_tcp:
+  # SSH
+  - 22
+  # HTTP
+  - 80
+firewall_udp: []

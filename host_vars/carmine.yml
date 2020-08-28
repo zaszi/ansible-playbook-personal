@@ -1,0 +1,15 @@
+---
+extra_packages:
+  - dkms
+
+extra_packages_aur:
+  - rtl8821ce-dkms-git
+
+firewall_tcp:
+  # SSH
+  - 22
+  # Syncthing
+  - 22000
+firewall_udp:
+  # Syncthing discovery broadcasts
+  - 21027

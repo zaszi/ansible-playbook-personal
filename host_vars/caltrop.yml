@@ -1,0 +1,11 @@
+---
+arch: armv6
+extra_packages: []
+extra_packages_aur: []
+
+firewall_tcp:
+  # SSH
+  - 22
+  # Weechat-Relay
+  - 9001
+firewall_udp: []

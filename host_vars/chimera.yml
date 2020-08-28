@@ -1,0 +1,16 @@
+---
+arch: armv6
+extra_packages:
+  - wol
+extra_packages_aur: []
+
+firewall_tcp:
+  # SSH
+  - 22
+  # HTTP
+  - 80
+  # HTTPS
+  - 443
+firewall_udp:
+  # Wireguard
+  - 51820
