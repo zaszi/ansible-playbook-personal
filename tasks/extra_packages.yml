@@ -1,0 +1,14 @@
+---
+- name: Install extra (host-specific) packages
+  pacman:
+    name: "{{ extra_packages }}"
+    state: present
+
+- name: Install extra (host-specific) AUR packages
+  become: true
+  become_user: aurmake
+  aur:
+    name: "{{ item }}"
+    use: makepkg
+    skip_installed: true
+  loop: "{{ extra_packages_aur }}"

@@ -1,7 +1,11 @@
 ---
 - hosts: all
   become: true
-  tasks:
-    - include_tasks: tasks/banner.yml
   roles:
     - common
+
+- hosts: all
+  become: true
+  tasks:
+    - include_tasks: tasks/banner.yml
+    - include_tasks: tasks/extra_packages.yml
