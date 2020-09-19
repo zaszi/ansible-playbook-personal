@@ -26,6 +26,7 @@ packages:
   - p7zip
   - pacman-contrib
   - pkgfile
+  - pkgstats
   - python
   - rng-tools
   - rsync

@@ -45,6 +45,7 @@ packages:
   - parted
   - pass
   - pkgfile
+  - pkgstats
   - playerctl
   - prettier
   - proselint
