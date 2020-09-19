@@ -1,5 +1,5 @@
 ---
-arch: armv6
+arch: armv6h
 extra_packages:
   - wol
 extra_packages_aur: []

@@ -6,7 +6,7 @@ dracut: false
 
 ### COMMON - PACKAGES ###
 
-arch: armv7
+arch: armv7h
 packages:
   - atop
   - base-devel
