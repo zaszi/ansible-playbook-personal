@@ -3,9 +3,11 @@
   become: true
   roles:
     - common
-
-- hosts: all
-  become: true
   tasks:
     - include_tasks: tasks/banner.yml
     - include_tasks: tasks/extra_packages.yml
+
+- hosts: all
+  become: false
+  roles:
+    - dotfiles
