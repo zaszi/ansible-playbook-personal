@@ -128,7 +128,7 @@ users:
 ### COMMON - NETWORK ###
 
 wired: true
-wireless: false
+wireless: true
 bridge: false
 bridge_interfaces: []
 firewall_tcp: []
