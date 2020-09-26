@@ -128,3 +128,5 @@ scripts: false
 sway: false
 syncthing: false
 tmux: true
+weechat: false
+weechat_backup_location: ""

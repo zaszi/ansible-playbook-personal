@@ -1,6 +1,9 @@
 ---
+### COMMON ###
+
 arch: armv6h
-extra_packages: []
+extra_packages:
+  - weechat
 extra_packages_aur: []
 
 firewall_tcp:
@@ -9,3 +12,8 @@ firewall_tcp:
   # Weechat-Relay
   - 9001
 firewall_udp: []
+
+### DOTFILES ###
+weechat: true
+weechat_backup_location: "/home/{{ ansible_user }}\
+  /documents/backups/weechat/weechat_config.tar.gz"
