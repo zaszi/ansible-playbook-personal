@@ -1,4 +1,6 @@
 ---
+### COMMON ###
+
 arch: armv6h
 extra_packages:
   - wol

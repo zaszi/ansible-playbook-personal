@@ -1,4 +1,6 @@
 ---
+### COMMON ###
+
 extra_packages:
   - syncthing
 extra_packages_aur: []
@@ -11,3 +13,6 @@ firewall_tcp:
 firewall_udp:
   # Syncthing discovery broadcasts
   - 21027
+
+### DOTFILES ###
+syncthing: true
