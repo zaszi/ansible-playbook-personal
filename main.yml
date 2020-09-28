@@ -11,3 +11,8 @@
   become: false
   roles:
     - dotfiles
+
+- hosts: chimera
+  become: true
+  roles:
+    - certbot
