@@ -12,7 +12,13 @@
   roles:
     - dotfiles
 
+- hosts: carmine
+  become: true
+  roles:
+    - wireguard
+
 - hosts: chimera
   become: true
   roles:
+    - wireguard
     - certbot

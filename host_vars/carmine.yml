@@ -15,3 +15,8 @@ firewall_tcp:
 firewall_udp:
   # Syncthing discovery broadcasts
   - 21027
+
+### WIREGUARD ###
+
+wg_server: chimera
+wg_address: 10.200.200.2
