@@ -21,4 +21,10 @@
   become: true
   roles:
     - wireguard
+    - nginx
     - certbot
+
+- hosts: copycat
+  become: true
+  roles:
+    - nginx

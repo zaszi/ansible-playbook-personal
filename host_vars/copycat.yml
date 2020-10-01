@@ -10,3 +10,9 @@ firewall_tcp:
   # HTTP
   - 80
 firewall_udp: []
+
+### NGINX ###
+
+vhost_location: "../files/vhosts"
+vhosts:
+  - zaszi_web.conf
