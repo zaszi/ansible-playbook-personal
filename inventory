@@ -8,6 +8,7 @@ copycat ansible_host=copycat
 chimera ansible_host=chimera
 caltrop ansible_host=caltrop
 crystal ansible_host=crystal
+cutlass ansible_host=cutlass
 
 [zaszi:children]
 workstations
