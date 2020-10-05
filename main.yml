@@ -6,25 +6,29 @@
   tasks:
     - include_tasks: tasks/banner.yml
     - include_tasks: tasks/extra_packages.yml
+  tags: common
 
 - hosts: all
   become: false
   roles:
     - dotfiles
+  tags: dotfiles
 
-- hosts: carmine
+- hosts: chimera carmine
   become: true
   roles:
     - wireguard
+  tags: vpn
 
 - hosts: chimera
   become: true
   roles:
-    - wireguard
     - nginx
     - certbot
+  tags: proxy
 
 - hosts: copycat
   become: true
   roles:
     - nginx
+  tags: web
