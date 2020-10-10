@@ -32,3 +32,9 @@
   roles:
     - nginx
   tags: web
+
+- hosts: crystal
+  become: true
+  roles:
+    - pihole
+  tags: dns
