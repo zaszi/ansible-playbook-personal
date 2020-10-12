@@ -7,4 +7,8 @@ extra_packages_aur: []
 firewall_tcp:
   # SSH
   - 22
-firewall_udp: []
+  # DNS
+  - 53
+firewall_udp:
+  # DNS
+  - 53
