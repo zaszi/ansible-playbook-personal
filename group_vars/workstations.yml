@@ -91,7 +91,6 @@ packages_aur:
   - pandoc-bin
   - pulseaudio-ctl
   - shellcheck-bin
-  - speccy
   - ssh-audit
   - starship
   - wl-clipboard-x11
