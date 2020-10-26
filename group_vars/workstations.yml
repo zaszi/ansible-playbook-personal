@@ -63,6 +63,7 @@ packages:
   - rustup
   - shfmt
   - slurp
+  - steam
   - sway
   - swaybg
   - swaylock
