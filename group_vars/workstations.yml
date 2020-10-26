@@ -20,6 +20,7 @@ packages:
   - bluez
   - bluez-utils
   - ccid
+  - discord
   - dosfstools
   - exa
   - firefox
@@ -68,7 +69,6 @@ packages:
   - swayidle
   - syncthing
   - tcpdump
-  - teamspeak3
   - texlive-core
   - texlive-latexextra
   - tmux
