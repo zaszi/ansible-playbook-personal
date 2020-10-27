@@ -23,7 +23,6 @@ packages:
   - discord
   - dosfstools
   - exa
-  - firefox
   - fzf
   - git
   - gnupg
@@ -56,6 +55,7 @@ packages:
   - python
   - pwgen
   - qrencode
+  - qutebrowser
   - reflector
   - rng-tools
   - rsync
