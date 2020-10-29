@@ -23,6 +23,7 @@ packages:
   - discord
   - dosfstools
   - exa
+  - ffmpeg
   - fzf
   - git
   - gnupg
@@ -78,8 +79,10 @@ packages:
   - ttf-font-awesome
   - unrar
   - unzip
+  - v4l2loopback-dkms
   - vint
   - waybar
+  - wf-recorder
   - wine
   - wl-clipboard
   - xdg-user-dirs
