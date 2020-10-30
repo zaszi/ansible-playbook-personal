@@ -35,6 +35,7 @@ packages:
   - jq
   - ldns
   - light
+  - mako
   - ncdu
   - neofetch
   - neovim
@@ -176,6 +177,7 @@ services:
 alacritty: true
 bash: true
 bash_root: true
+mako: true
 neovim: true
 neovim_plugins:
   ale: https://github.com/w0rp/ale.git

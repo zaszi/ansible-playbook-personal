@@ -106,6 +106,7 @@ services:
 alacritty: false
 bash: true
 bash_root: true
+mako: false
 neovim: true
 neovim_plugins:
   ale: https://github.com/w0rp/ale.git
