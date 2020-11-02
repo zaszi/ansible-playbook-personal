@@ -193,6 +193,7 @@ neovim_plugins:
   vim-devicons: https://github.com/ryanoasis/vim-devicons.git
   vim-gitgutter: https://github.com/airblade/vim-gitgutter.git
   vimwiki: https://github.com/vimwiki/vimwiki.git
+qutebrowser: true
 rust: true
 rust_components:
   - clippy
