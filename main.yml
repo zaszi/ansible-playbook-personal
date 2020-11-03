@@ -8,6 +8,12 @@
     - include_tasks: tasks/extra_packages.yml
   tags: common
 
+- hosts: workstations
+  become: true
+  tasks:
+    - include_tasks: tasks/secureboot.yml
+  tags: secureboot
+
 - hosts: all
   become: false
   roles:

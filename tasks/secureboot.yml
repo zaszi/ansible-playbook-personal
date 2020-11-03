@@ -1,0 +1,120 @@
+---
+- name: Install dependencies
+  community.general.pacman:
+    name:
+      - efitools
+      - openssl
+      - sbsigntools
+      - intel-ucode
+    state: present
+
+- name: Verify whether keys have already been generated
+  stat:
+    path: "/boot/secureboot"
+  register: config
+
+- name: Ensure /boot/secureboot exists
+  file:
+    path: "/boot/secureboot"
+    owner: root
+    group: root
+    mode: 0700
+    state: directory
+  when: not config.stat.exists
+
+- name: Generate a GUID
+  shell: uuidgen --random > GUID.txt
+  args:
+    chdir: /boot/secureboot
+  when: not config.stat.exists
+
+- name: Generate a Platform Key
+  shell: |
+    openssl req -newkey rsa:4096 -nodes -keyout PK.key -new -x509 -sha256 \
+    -days 3650 -subj "/CN=Zaszi's Platform Key/" -out PK.crt
+    openssl x509 -outform DER -in PK.crt -out PK.cer
+    cert-to-efi-sig-list -g "$(< GUID.txt)" PK.crt PK.esl
+    sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt PK PK.esl PK.auth
+    sign-efi-sig-list -g "$(< GUID.txt)" -c PK.crt -k PK.key PK \
+    /dev/null rm_PK.auth
+  args:
+    chdir: /boot/secureboot
+  when: not config.stat.exists
+
+- name: Generate a Key Exchange Key
+  shell: |
+    openssl req -newkey rsa:4096 -nodes -keyout KEK.key -new -x509 -sha256 \
+    -days 3650 -subj "/CN=Zaszi's Key Exchange Key/" -out KEK.crt
+    openssl x509 -outform DER -in KEK.crt -out KEK.cer
+    cert-to-efi-sig-list -g "$(< GUID.txt)" KEK.crt KEK.esl
+    sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt KEK KEK.esl \
+    KEK.auth
+  args:
+    chdir: /boot/secureboot
+  when: not config.stat.exists
+
+- name: Generate a Signature Database Key
+  shell: |
+    openssl req -newkey rsa:4096 -nodes -keyout db.key -new -x509 -sha256 \
+    -days 3650 -subj "/CN=Zaszi's Signature Database Key/" -out db.crt
+    openssl x509 -outform DER -in db.crt -out db.cer
+    cert-to-efi-sig-list -g "$(< GUID.txt)" db.crt db.esl
+    sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
+  args:
+    chdir: /boot/secureboot
+  when: not config.stat.exists
+
+- name: Copy the auth files to /boot/efi
+  shell: find /boot/secureboot -name "*.auth" -type f -exec cp {} /boot/efi/ \;
+  when: not config.stat.exists
+
+- name: Verify whether the bootloader has been signed
+  shell: sbverify --list /boot/efi/EFI/systemd/systemd-bootx64.efi
+  register: bootloader_sign
+  changed_when: false
+
+- name: Sign the current bootloader
+  shell: |
+    sbsign --key db.key --cert db.crt --output \
+    /boot/efi/EFI/systemd/systemd-bootx64.efi \
+    /boot/efi/EFI/systemd/systemd-bootx64.efi
+  args:
+    chdir: /boot/secureboot
+  when: bootloader_sign.stderr.find("No signature table present") != -1
+
+- name: Verify whether the kernel bundle has been signed
+  shell: sbverify --list /boot/efi/EFI/Linux/arch.efi
+  register: kernel_sign
+  changed_when: false
+
+- name: Sign the current kernel bundle
+  shell: sbsign --key db.key --cert db.crt --output \
+    /boot/efi/EFI/Linux/arch.efi /boot/efi/EFI/Linux/arch.efi
+  args:
+    chdir: /boot/secureboot
+  when: kernel_sign.stderr.find("No signature table present") != -1
+
+- name: Install pacman hook for bootloader
+  copy:
+    src: systemd-boot.hook
+    dest: /etc/pacman.d/hooks/20-systemd-boot.hook
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install pacman hook for bundled kernel preparation
+  copy:
+    src: kernel-bundle.hook
+    dest: /etc/pacman.d/hooks/30-kernel-bundle.hook
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Set restrictive permissions on /boot/secureboot
+  file:
+    path: "/boot/secureboot"
+    mode: "u=rwX,g-rwx,o-rwx"
+    recurse: true
+    follow: false
+    modification_time: "preserve"
+    access_time: "preserve"

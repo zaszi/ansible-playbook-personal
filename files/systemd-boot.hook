@@ -1,0 +1,9 @@
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Updating and signing systemd-boot
+When = PostTransaction
+Exec = /bin/sh -c '/usr/bin/bootctl --path=/boot/efi update && /usr/bin/sbsign --key /boot/secureboot/db.key --cert /boot/secureboot/db.crt --output /boot/efi/EFI/systemd/systemd-bootx64.efi /boot/efi/EFI/systemd/systemd-bootx64.efi && /usr/bin/sbsign --key /boot/secureboot/db.key --cert /boot/secureboot/db.crt --output /boot/efi/EFI/BOOT/BOOTX64.EFI /boot/efi/EFI/BOOT/BOOTX64.EFI'
