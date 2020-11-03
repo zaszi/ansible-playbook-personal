@@ -36,6 +36,7 @@ packages:
   - ldns
   - light
   - mako
+  - man
   - ncdu
   - neofetch
   - neovim
@@ -98,7 +99,7 @@ packages_aur:
   - pulseaudio-ctl
   - shellcheck-bin
   - ssh-audit
-  - starship
+  - starship-bin
   - wl-clipboard-x11
   - yay
 
