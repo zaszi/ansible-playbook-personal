@@ -1,9 +1,7 @@
 ---
 ### COMMON ###
 
-extra_packages:
-  - dkms
-
+extra_packages: []
 extra_packages_aur:
   - rtl8821ce-dkms-git
 

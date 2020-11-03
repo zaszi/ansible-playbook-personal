@@ -3,7 +3,6 @@
 
 extra_packages:
   - broadcom-wl-dkms
-  - dkms
 extra_packages_aur: []
 
 bridge: true
