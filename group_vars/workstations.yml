@@ -59,6 +59,7 @@ packages:
   - python
   - pwgen
   - qrencode
+  - qt5-wayland
   - qutebrowser
   - reflector
   - rng-tools
