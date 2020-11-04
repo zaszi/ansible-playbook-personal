@@ -127,6 +127,7 @@ users:
     shell: /bin/bash
     groups:
       - audio
+      - input
       - network
       - kvm
       - uucp
