@@ -1,0 +1,53 @@
+---
+- name: Install dependencies
+  community.general.pacman:
+    name:
+      - qemu
+      - libvirt
+      - virt-manager
+      - dnsmasq
+      - bridge-utils
+      - polkit
+      - edk2-ovmf
+    state: present
+
+- name: Install vfio udev rules
+  copy:
+    src: qemu-hw-users.rules
+    dest: /etc/udev/rules.d/10-qemu-hw-users.rules
+    owner: root
+    group: root
+    mode: 0644
+  when: passthrough|bool
+
+- name: Install dracut configuration file
+  copy:
+    src: dracut-vfio.conf
+    dest: /etc/dracut.conf.d/20-vfio.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: passthrough|bool
+
+- name: Install vfio kernel module options
+  template:
+    src: modprobe-vfio.conf.j2
+    dest: /etc/modprobe.d/vfio.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: passthrough|bool
+
+- name: Set up passwordless polkit rules
+  copy:
+    src: nopasswd_global.rules
+    dest: /etc/polkit-1/rules.d/49-nopasswd_global.rules
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable services
+  service:
+    name: libvirtd
+    enabled: true
+    state: started

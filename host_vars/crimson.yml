@@ -18,3 +18,9 @@ firewall_udp:
   - 9
   # Syncthing discovery broadcasts
   - 21027
+
+### KVM ###
+
+passthrough: true
+passthrough_options:
+  - options vfio-pci ids=1002:731f,1002:ab38
