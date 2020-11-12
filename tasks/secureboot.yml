@@ -64,10 +64,6 @@
     chdir: /boot/secureboot
   when: not config.stat.exists
 
-- name: Copy the auth files to /boot/efi
-  shell: find /boot/secureboot -name "*.auth" -type f -exec cp {} /boot/efi/ \;
-  when: not config.stat.exists
-
 - name: Verify whether the bootloader has been signed
   shell: sbverify --list /boot/efi/EFI/systemd/systemd-bootx64.efi
   register: bootloader_sign
