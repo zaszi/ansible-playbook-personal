@@ -64,16 +64,30 @@
     chdir: /boot/secureboot
   when: not config.stat.exists
 
-- name: Verify whether the bootloader has been signed
+- name: Verify whether the systemd-boot binary has been signed
   shell: sbverify --list /boot/efi/EFI/systemd/systemd-bootx64.efi
+  register: bootloader_sign
+  changed_when: false
+
+- name: Sign the current systemd-boot binary
+  shell: |
+    sbsign --key db.key --cert db.crt --output \
+    /boot/efi/EFI/systemd/systemd-bootx64.efi \
+    /boot/efi/EFI/systemd/systemd-bootx64.efi
+  args:
+    chdir: /boot/secureboot
+  when: bootloader_sign.stderr.find("No signature table present") != -1
+
+- name: Verify whether the bootloader has been signed
+  shell: sbverify --list /boot/efi/EFI/BOOT/BOOTX64.EFI
   register: bootloader_sign
   changed_when: false
 
 - name: Sign the current bootloader
   shell: |
     sbsign --key db.key --cert db.crt --output \
-    /boot/efi/EFI/systemd/systemd-bootx64.efi \
-    /boot/efi/EFI/systemd/systemd-bootx64.efi
+    /boot/efi/EFI/BOOT/BOOTX64.EFI \
+    /boot/efi/EFI/BOOT/BOOTX64.EFI
   args:
     chdir: /boot/secureboot
   when: bootloader_sign.stderr.find("No signature table present") != -1
