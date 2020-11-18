@@ -2,13 +2,15 @@
 - name: Install dependencies
   community.general.pacman:
     name:
-      - qemu
-      - libvirt
-      - virt-manager
-      - dnsmasq
       - bridge-utils
-      - polkit
+      - dnsmasq
+      - dmidecode
+      - ebtables
       - edk2-ovmf
+      - libvirt
+      - polkit
+      - qemu
+      - virt-manager
     state: present
 
 - name: Install vfio udev rules
