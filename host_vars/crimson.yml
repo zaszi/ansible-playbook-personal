@@ -3,7 +3,8 @@
 
 extra_packages:
   - broadcom-wl-dkms
-extra_packages_aur: []
+extra_packages_aur:
+  - vendor-reset-dkms-git
 
 bridge: true
 bridge_interfaces:
