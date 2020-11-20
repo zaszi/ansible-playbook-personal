@@ -24,7 +24,6 @@ packages:
   - discord
   - dosfstools
   - exa
-  - ffmpeg
   - fzf
   - git
   - gnupg
