@@ -35,7 +35,6 @@ packages:
   - traceroute
   - unrar
   - unzip
-  - vim
   - zip
 packages_aur:
   - yay
