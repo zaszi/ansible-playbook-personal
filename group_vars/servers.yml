@@ -120,7 +120,6 @@ neovim_plugins:
   supertab: https://github.com/ervandew/supertab.git
   vim-devicons: https://github.com/ryanoasis/vim-devicons.git
   vim-gitgutter: https://github.com/airblade/vim-gitgutter.git
-  vimwiki: https://github.com/vimwiki/vimwiki.git
 qutebrowser: false
 rust: false
 rust_components: []
