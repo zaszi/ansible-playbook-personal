@@ -20,6 +20,12 @@
     - include_tasks: tasks/kvm.yml
   tags: kvm
 
+- hosts: carmine
+  become: true
+  tasks:
+    - include_tasks: tasks/rtl8821ce.yml
+  tags: rtl8821ce
+
 - hosts: all
   become: false
   roles:
