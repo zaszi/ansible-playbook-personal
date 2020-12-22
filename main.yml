@@ -49,6 +49,8 @@
   become: true
   roles:
     - nginx
+  tasks:
+    - include_tasks: tasks/zaszi-web.yml
   tags: web
 
 - hosts: crystal

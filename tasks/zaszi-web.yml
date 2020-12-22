@@ -1,0 +1,27 @@
+---
+- name: Ensure /var/www/zaszi.web exists
+  file:
+    path: "/var/www/zaszi.net"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+
+- name: Copy zaszi.net web root
+  ansible.posix.synchronize:
+    src: files/zaszi-web/
+    dest: /var/www/zaszi.net/
+    copy_links: true
+    rsync_opts:
+      - "--exclude=.git"
+
+- name: Set zaszi.net web root permissions
+  file:
+    path: /var/www/zaszi.net
+    owner: root
+    group: root
+    mode: "u=rwX,g=rX,o=rX"
+    recurse: true
+    follow: false
+    modification_time: "preserve"
+    access_time: "preserve"
