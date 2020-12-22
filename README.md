@@ -17,4 +17,4 @@ Found a problem or have a suggestion? Feel free to open an issue.
 
 ## License
 
-Ansible-playbook-personal is licensed under the [MIT license](https://github.com/zaszi/ansible-playbook-personal/blob/master/LICENSE.md).
+Ansible-playbook-personal is licensed under the [MIT license](https://github.com/zaszi/ansible-playbook-personal/blob/master/LICENSE).
