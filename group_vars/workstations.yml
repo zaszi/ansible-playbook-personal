@@ -91,6 +91,7 @@ packages:
   - wl-clipboard
   - xdg-user-dirs
   - xorg-server-xwayland
+  - xorg-xeyes
   - yamllint
   - zathura-pdf-mupdf
   - zip
