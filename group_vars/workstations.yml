@@ -36,6 +36,7 @@ packages:
   - ldns
   - light
   - linux-headers
+  - lld
   - mako
   - man
   - ncdu
