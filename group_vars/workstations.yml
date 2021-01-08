@@ -57,6 +57,7 @@ packages:
   - prettier
   - proselint
   - pulseaudio
+  - pulseaudio-alsa
   - pulseaudio-bluetooth
   - pulsemixer
   - python
