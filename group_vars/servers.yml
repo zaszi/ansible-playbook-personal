@@ -116,6 +116,7 @@ neovim_plugins:
   lightline-ale: https://github.com/maximbaz/lightline-ale.git
   nerdtree: https://github.com/scrooloose/nerdtree.git
   nerdtree-git-plugin: https://github.com/Xuyuanp/nerdtree-git-plugin.git
+  ron-rs: https://github.com/ron-rs/ron.vim.git
   supertab: https://github.com/ervandew/supertab.git
   vim-devicons: https://github.com/ryanoasis/vim-devicons.git
   vim-gitgutter: https://github.com/airblade/vim-gitgutter.git
