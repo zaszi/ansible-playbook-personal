@@ -106,6 +106,7 @@ packages_aur:
   - shellcheck-bin
   - ssh-audit
   - starship-bin
+  - telegram-desktop-bin
   - wl-clipboard-x11
   - yay
 
