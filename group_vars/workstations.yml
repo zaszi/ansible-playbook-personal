@@ -83,6 +83,7 @@ packages:
   - texlive-latexextra
   - tmux
   - traceroute
+  - ttf-droid
   - ttf-font-awesome
   - unrar
   - unzip
