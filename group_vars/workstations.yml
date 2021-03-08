@@ -61,6 +61,7 @@ packages:
   - pulseaudio-bluetooth
   - pulsemixer
   - python
+  - python-adblock
   - pwgen
   - qrencode
   - qt5-wayland
