@@ -21,6 +21,7 @@ packages:
   - bluez-utils
   - ccid
   - clang
+  - cloc
   - dkms
   - discord
   - dosfstools
