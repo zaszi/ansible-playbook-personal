@@ -4,6 +4,7 @@
 arch: armv6h
 extra_packages:
   - weechat
+  - perl-pod-parser
 extra_packages_aur: []
 
 firewall_tcp:
