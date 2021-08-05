@@ -103,6 +103,7 @@ packages:
   - zip
 packages_aur:
   - ansible-aur-git
+  - eid-mw
   - nerd-fonts-iosevka
   - pandoc-bin
   - pulseaudio-ctl
