@@ -22,6 +22,8 @@ packages:
   - ccid
   - clang
   - cloc
+  - cups
+  - cups-pdf
   - dkms
   - discord
   - dosfstools
@@ -172,6 +174,7 @@ ntp_fallback:
 services:
   - atop.service
   - bluetooth.service
+  - cups.socket
   - fstrim.timer
   - iptables.service
   - ip6tables.service
