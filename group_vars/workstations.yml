@@ -28,6 +28,7 @@ packages:
   - discord
   - dosfstools
   - exa
+  - freerdp
   - fzf
   - git
   - gnupg
@@ -70,6 +71,7 @@ packages:
   - qt5-wayland
   - qutebrowser
   - reflector
+  - remmina
   - rng-tools
   - rsync
   - rust-analyzer
