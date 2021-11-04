@@ -56,6 +56,8 @@ packages:
   - parted
   - pass
   - pdfjs
+  - pipewire
+  - pipewire-media-session
   - pkgfile
   - pkgstats
   - playerctl
@@ -95,12 +97,12 @@ packages:
   - ttf-font-awesome
   - unrar
   - unzip
-  - v4l2loopback-dkms
   - vint
   - waybar
-  - wf-recorder
   - wine
   - wl-clipboard
+  - xdg-desktop-portal
+  - xdg-desktop-portal-wlr
   - xdg-user-dirs
   - xorg-server-xwayland
   - xorg-xeyes
@@ -212,6 +214,7 @@ neovim_plugins:
   supertab: https://github.com/ervandew/supertab.git
   vim-devicons: https://github.com/ryanoasis/vim-devicons.git
   vim-gitgutter: https://github.com/airblade/vim-gitgutter.git
+pipewire: true
 qutebrowser: true
 rust: true
 rust_components:
