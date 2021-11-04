@@ -78,6 +78,7 @@ packages:
   - rustup
   - shfmt
   - slurp
+  - starship
   - steam
   - sway
   - swaybg
@@ -113,7 +114,6 @@ packages_aur:
   - pulseaudio-ctl
   - shellcheck-bin
   - ssh-audit
-  - starship-bin
   - telegram-desktop-bin
   - wl-clipboard-x11
   - yay
