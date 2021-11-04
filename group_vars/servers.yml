@@ -22,6 +22,7 @@ packages:
   - ncdu
   - neofetch
   - neovim
+  - nss-mdns
   - openssh
   - p7zip
   - pacman-contrib
@@ -91,6 +92,7 @@ ntp_fallback:
 
 services:
   - atop.service
+  - avahi-daemon.service
   - iptables.service
   - ip6tables.service
   - paccache.timer

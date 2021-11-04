@@ -9,7 +9,9 @@ firewall_tcp:
   - 22
   # HTTP
   - 80
-firewall_udp: []
+firewall_udp:
+  # mDNS
+  - 5353
 
 ### NGINX ###
 

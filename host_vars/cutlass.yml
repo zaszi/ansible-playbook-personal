@@ -7,4 +7,6 @@ extra_packages_aur: []
 firewall_tcp:
   # SSH
   - 22
-firewall_udp: []
+firewall_udp:
+  # mDNS
+  - 5353

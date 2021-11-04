@@ -11,6 +11,8 @@ firewall_tcp:
   # Syncthing
   - 22000
 firewall_udp:
+  # mDNS
+  - 5353
   # Syncthing discovery broadcasts
   - 21027
 

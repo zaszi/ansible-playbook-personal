@@ -12,7 +12,9 @@ firewall_tcp:
   - 22
   # Weechat-Relay
   - 9001
-firewall_udp: []
+firewall_udp:
+  # mDNS
+  - 5353
 
 ### DOTFILES ###
 

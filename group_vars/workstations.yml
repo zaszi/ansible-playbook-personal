@@ -48,6 +48,7 @@ packages:
   - neofetch
   - neovim
   - noto-fonts-emoji
+  - nss-mdns
   - openssh
   - openvpn
   - p7zip
@@ -175,6 +176,7 @@ ntp_fallback:
 
 services:
   - atop.service
+  - avahi-daemon.service
   - bluetooth.service
   - cups.socket
   - fstrim.timer

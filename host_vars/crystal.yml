@@ -12,3 +12,5 @@ firewall_tcp:
 firewall_udp:
   # DNS
   - 53
+  # mDNS
+  - 5353
