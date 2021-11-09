@@ -221,8 +221,9 @@ rust_components:
   - clippy
   - rustfmt
 rust_cargo:
-  - diesel_cli --no-default-features --features sqlite
+  - cargo-edit
   - wasm-pack
+  - diesel_cli --no-default-features --features sqlite
 scripts: true
 sway: true
 syncthing: true
