@@ -114,6 +114,7 @@ packages_aur:
   - eid-mw
   - nerd-fonts-iosevka
   - pandoc-bin
+  - postman-bin
   - pulseaudio-ctl
   - shellcheck-bin
   - ssh-audit
