@@ -41,7 +41,6 @@ packages:
   - ldns
   - light
   - linux-headers
-  - lld
   - mako
   - man
   - ncdu
@@ -112,6 +111,7 @@ packages:
 packages_aur:
   - ansible-aur-git
   - eid-mw
+  - mold
   - nerd-fonts-iosevka
   - pandoc-bin
   - postman-bin
