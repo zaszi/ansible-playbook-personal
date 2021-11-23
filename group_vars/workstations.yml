@@ -28,6 +28,9 @@ packages:
   - discord
   - dosfstools
   - exa
+  - fd
+  - figlet
+  - fortune-mod
   - freerdp
   - fzf
   - git
@@ -37,10 +40,12 @@ packages:
   - imv
   - inetutils
   - iwd
+  - jp2a
   - jq
   - ldns
   - light
   - linux-headers
+  - lolcat
   - mako
   - man
   - ncdu
@@ -74,6 +79,7 @@ packages:
   - qutebrowser
   - reflector
   - remmina
+  - ripgrep
   - rng-tools
   - rsync
   - rust-analyzer
@@ -111,13 +117,16 @@ packages:
 packages_aur:
   - ansible-aur-git
   - eid-mw
+  - glow-bin
   - mold
+  - neovide
   - nerd-fonts-iosevka
   - pandoc-bin
   - postman-bin
   - pulseaudio-ctl
   - shellcheck-bin
   - ssh-audit
+  - stylua
   - telegram-desktop-bin
   - wl-clipboard-x11
   - yay
