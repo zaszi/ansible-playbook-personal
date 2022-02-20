@@ -99,7 +99,7 @@ packages:
   - tmux
   - traceroute
   - ttf-droid
-  - ttf-font-awesome
+  - ttf-iosevka-nerd
   - unrar
   - unzip
   - vint
@@ -120,7 +120,6 @@ packages_aur:
   - glow-bin
   - mold
   - neovide
-  - nerd-fonts-iosevka
   - pandoc-bin
   - postman-bin
   - pulseaudio-ctl
