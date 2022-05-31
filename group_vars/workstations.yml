@@ -34,6 +34,7 @@ packages:
   - freerdp
   - fzf
   - git
+  - glow
   - gnupg
   - grim
   - htop
@@ -117,7 +118,6 @@ packages:
 packages_aur:
   - ansible-aur-git
   - eid-mw
-  - glow-bin
   - mold
   - neovide
   - pandoc-bin
