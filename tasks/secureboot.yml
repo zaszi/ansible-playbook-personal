@@ -107,7 +107,7 @@
 - name: Install pacman hook for bootloader
   copy:
     src: systemd-boot.hook
-    dest: /etc/pacman.d/hooks/20-systemd-boot.hook
+    dest: /etc/pacman.d/hooks/91-systemd-boot.hook
     owner: root
     group: root
     mode: 0644
@@ -115,7 +115,7 @@
 - name: Install pacman hook for bundled kernel preparation
   copy:
     src: kernel-bundle.hook
-    dest: /etc/pacman.d/hooks/30-kernel-bundle.hook
+    dest: /etc/pacman.d/hooks/92-kernel-bundle.hook
     owner: root
     group: root
     mode: 0644
