@@ -25,3 +25,7 @@ wg_address: 10.200.200.2
 
 passthrough: false
 passthrough-options: []
+
+### TASKS ###
+
+cpu: "intel"

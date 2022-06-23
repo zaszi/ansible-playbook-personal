@@ -5,7 +5,7 @@
       - efitools
       - openssl
       - sbsigntools
-      - intel-ucode
+      - "{{ cpu }}-ucode"
     state: present
 
 - name: Verify whether keys have already been generated

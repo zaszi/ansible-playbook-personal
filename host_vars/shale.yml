@@ -27,3 +27,7 @@ firewall_udp:
 passthrough: true
 passthrough_options:
   - options vfio-pci ids=1002:731f,1002:ab38
+
+### TASKS ###
+
+cpu: "amd"
