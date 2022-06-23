@@ -20,32 +20,32 @@
     - include_tasks: tasks/kvm.yml
   tags: kvm
 
-- hosts: carmine
+- hosts: slate
   become: true
   tasks:
     - include_tasks: tasks/rtl8821ce.yml
-  tags: rtl8821ce
+  tags: driver
 
-- hosts: all
-  become: false
-  roles:
-    - dotfiles
-  tags: dotfiles
-
-- hosts: chimera carmine
+- hosts: gabbro slate
   become: true
   roles:
     - wireguard
   tags: vpn
 
-- hosts: chimera
+- hosts: gabbro
   become: true
   roles:
     - nginx
     - certbot
   tags: proxy
 
-- hosts: copycat
+- hosts: gabbro
+  become: true
+  roles:
+    - pihole
+  tags: dns
+
+- hosts: galena
   become: true
   roles:
     - nginx
@@ -53,8 +53,8 @@
     - include_tasks: tasks/zaszi-web.yml
   tags: web
 
-- hosts: crystal
-  become: true
+- hosts: all
+  become: false
   roles:
-    - pihole
-  tags: dns
+    - dotfiles
+  tags: dotfiles

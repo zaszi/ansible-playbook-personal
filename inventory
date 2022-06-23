@@ -1,14 +1,12 @@
 [workstations]
-crimson ansible_host=crimson
-carmine ansible_host=carmine
+shale ansible_host=shale
+slate ansible_host=slate
 
 [servers]
-coconut ansible_host=coconut
-copycat ansible_host=copycat
-chimera ansible_host=chimera
-caltrop ansible_host=caltrop
-crystal ansible_host=crystal
-cutlass ansible_host=cutlass
+gabbro ansible_host=gabbro
+galena ansible_host=galena
+gneiss ansible_host=gneiss
+gypsum ansible_host=gypsum
 
 [zaszi:children]
 workstations

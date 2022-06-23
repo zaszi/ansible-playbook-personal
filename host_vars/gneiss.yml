@@ -1,10 +1,10 @@
 ---
 ### COMMON ###
 
-arch: armv6h
 extra_packages:
-  - weechat
   - perl-pod-parser
+  - syncthing
+  - weechat
 extra_packages_aur: []
 
 firewall_tcp:
@@ -12,12 +12,17 @@ firewall_tcp:
   - 22
   # Weechat-Relay
   - 9001
+  # Syncthing
+  - 22000
 firewall_udp:
   # mDNS
   - 5353
+  # Syncthing discovery broadcasts
+  - 21027
 
 ### DOTFILES ###
 
+syncthing: true
 weechat: true
 weechat_backup_location: "/home/{{ ansible_user }}\
   /documents/backups/weechat/weechat_config.tar.gz"
