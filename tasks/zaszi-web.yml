@@ -8,7 +8,7 @@
     state: directory
 
 - name: Copy zaszi.net web root
-  ansible.posix.synchronize:
+  synchronize:
     src: files/zaszi-web/
     dest: /var/www/zaszi.net/
     copy_links: true
