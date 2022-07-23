@@ -16,6 +16,7 @@ packages:
   - arch-install-scripts
   - atop
   - bash-completion
+  - bash-language-server
   - bat
   - bluez
   - bluez-utils
@@ -36,6 +37,7 @@ packages:
   - git
   - glow
   - gnupg
+  - graphviz
   - grim
   - htop
   - imv
@@ -47,6 +49,7 @@ packages:
   - light
   - linux-headers
   - lolcat
+  - lua-language-server
   - mako
   - man
   - ncdu
@@ -67,7 +70,6 @@ packages:
   - pkgstats
   - playerctl
   - prettier
-  - proselint
   - pulseaudio
   - pulseaudio-alsa
   - pulseaudio-bluetooth
@@ -89,6 +91,7 @@ packages:
   - slurp
   - starship
   - steam
+  - stylua
   - sway
   - swaybg
   - swaylock
@@ -103,7 +106,6 @@ packages:
   - ttf-iosevka-nerd
   - unrar
   - unzip
-  - vint
   - waybar
   - wine
   - wl-clipboard
@@ -113,6 +115,7 @@ packages:
   - xorg-server-xwayland
   - xorg-xeyes
   - yamllint
+  - yaml-language-server
   - zathura-pdf-mupdf
   - zip
 packages_aur:
