@@ -1,12 +1,12 @@
 [workstations]
-shale ansible_host=shale
-slate ansible_host=slate
+shale ansible_host=shale.lan
+slate ansible_host=slate.lan
 
 [servers]
-gabbro ansible_host=gabbro
-galena ansible_host=galena
-gneiss ansible_host=gneiss
-gypsum ansible_host=gypsum
+gabbro ansible_host=gabbro.lan
+galena ansible_host=galena.lan
+gneiss ansible_host=gneiss.lan
+gypsum ansible_host=gypsum.lan
 
 [zaszi:children]
 workstations

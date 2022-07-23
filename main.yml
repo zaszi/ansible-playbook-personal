@@ -26,26 +26,26 @@
     - include_tasks: tasks/rtl8821ce.yml
   tags: driver
 
-- hosts: gabbro slate
+- hosts: galena slate
   become: true
   roles:
     - wireguard
   tags: vpn
 
-- hosts: gabbro
+- hosts: galena
   become: true
   roles:
     - nginx
     - certbot
   tags: proxy
 
-- hosts: gabbro
+- hosts: galena
   become: true
   roles:
     - pihole
   tags: dns
 
-- hosts: galena
+- hosts: gabbro
   become: true
   roles:
     - nginx
