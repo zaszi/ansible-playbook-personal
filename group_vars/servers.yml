@@ -29,7 +29,6 @@ packages:
   - pkgfile
   - pkgstats
   - python
-  - rng-tools
   - rsync
   - sshpass
   - tcpdump
@@ -97,7 +96,6 @@ services:
   - iptables.service
   - ip6tables.service
   - paccache.timer
-  - rngd.service
   - sshd.service
   - systemd-networkd.service
   - systemd-resolved.service

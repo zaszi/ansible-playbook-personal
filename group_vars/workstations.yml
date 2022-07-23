@@ -86,7 +86,6 @@ packages:
   - reflector
   - remmina
   - ripgrep
-  - rng-tools
   - rsync
   - rust-analyzer
   - rustup
@@ -200,7 +199,6 @@ services:
   - iwd.service
   - pcscd.socket
   - reflector.timer
-  - rngd.service
   - sshd.service
   - systemd-networkd.service
   - systemd-resolved.service
