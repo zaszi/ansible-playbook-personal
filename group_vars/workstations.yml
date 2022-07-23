@@ -219,7 +219,6 @@ rust_components:
 rust_cargo:
   - cargo-edit
   - wasm-pack
-  - diesel_cli --no-default-features --features sqlite
 scripts: true
 sway: true
 syncthing: true
