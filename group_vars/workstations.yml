@@ -170,8 +170,7 @@ bridge: false
 bridge_interfaces: []
 firewall_tcp: []
 firewall_udp: []
-dns:
-  - 192.168.1.1
+dns: []
 dns_fallback:
   - 9.9.9.9
   - 149.112.112.112
