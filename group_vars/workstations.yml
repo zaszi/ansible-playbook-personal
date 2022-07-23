@@ -28,6 +28,7 @@ packages:
   - dkms
   - discord
   - dosfstools
+  - eid-mw
   - exa
   - fd
   - figlet
@@ -52,8 +53,10 @@ packages:
   - lua-language-server
   - mako
   - man
+  - mold
   - ncdu
   - neofetch
+  - neovide
   - neovim
   - noto-fonts-emoji
   - nss-mdns
@@ -89,6 +92,7 @@ packages:
   - rustup
   - shfmt
   - slurp
+  - ssh-audit
   - starship
   - steam
   - stylua
@@ -119,16 +123,12 @@ packages:
   - zathura-pdf-mupdf
   - zip
 packages_aur:
-  - ansible-aur-git
-  - eid-mw
-  - mold
-  - neovide
+  - ansible-aur
+  - ansible-language-server
   - pandoc-bin
   - postman-bin
   - pulseaudio-ctl
   - shellcheck-bin
-  - ssh-audit
-  - stylua
   - telegram-desktop-bin
   - wl-clipboard-x11
   - yay
