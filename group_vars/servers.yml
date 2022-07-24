@@ -91,7 +91,6 @@ ntp_fallback:
 
 services:
   - atop.service
-  - avahi-daemon.service
   - iptables.service
   - ip6tables.service
   - paccache.timer
