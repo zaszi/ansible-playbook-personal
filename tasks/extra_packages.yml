@@ -3,6 +3,7 @@
   pacman:
     name: "{{ extra_packages }}"
     state: present
+  when: "extra_packages | length > 0"
 
 - name: Install extra (host-specific) AUR packages
   become: true
@@ -10,3 +11,4 @@
   aur:
     name: "{{ item }}"
   loop: "{{ extra_packages_aur }}"
+  when: "extra_packages_aur | length > 0"
