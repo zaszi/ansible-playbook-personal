@@ -20,6 +20,12 @@
     - include_tasks: tasks/kvm.yml
   tags: kvm
 
+- hosts: workstations
+  become: false
+  tasks:
+    - include_tasks: tasks/cups.yml
+  tags: cups
+
 - hosts: slate
   become: true
   tasks:
