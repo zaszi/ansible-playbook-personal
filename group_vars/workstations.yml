@@ -14,7 +14,6 @@ packages:
   - ansible
   - ansible-lint
   - arch-install-scripts
-  - atop
   - bash-completion
   - bash-language-server
   - bat
@@ -186,7 +185,6 @@ ntp_fallback:
 ### COMMON - SERVICES ###
 
 services:
-  - atop.service
   - bluetooth.service
   - cups.socket
   - fstrim.timer

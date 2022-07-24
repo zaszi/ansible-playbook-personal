@@ -8,7 +8,6 @@ dracut: false
 
 arch: armv7h
 packages:
-  - atop
   - base-devel
   - bash-completion
   - bat
@@ -90,7 +89,6 @@ ntp_fallback:
 ### COMMON - SERVICES ###
 
 services:
-  - atop.service
   - iptables.service
   - ip6tables.service
   - paccache.timer
