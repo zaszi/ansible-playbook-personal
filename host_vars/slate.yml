@@ -13,6 +13,8 @@ firewall_tcp:
 firewall_udp:
   # Syncthing discovery broadcasts
   - 21027
+  # Syncthing
+  - 22000
 
 ### WIREGUARD ###
 
