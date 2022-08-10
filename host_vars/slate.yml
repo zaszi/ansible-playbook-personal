@@ -19,7 +19,9 @@ firewall_udp:
 ### WIREGUARD ###
 
 wg_server: galena
-wg_address: 10.200.200.2
+wg_endpoint: zaszi.net
+wg_address4: 10.200.200.2/24
+wg_address6: fdd7:885c:bf88::2/48
 
 ### KVM ###
 
