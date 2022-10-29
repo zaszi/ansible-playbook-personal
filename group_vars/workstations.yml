@@ -163,7 +163,7 @@ users:
 ### COMMON - NETWORK ###
 
 wired: true
-wireless: true
+wireless: false
 bridge: false
 bridge_interfaces: []
 firewall_tcp: []

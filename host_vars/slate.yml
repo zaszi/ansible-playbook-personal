@@ -5,6 +5,7 @@ extra_packages: []
 extra_packages_aur:
   - rtl8821ce-dkms-git
 
+wireless: true
 firewall_tcp:
   # SSH
   - 22

@@ -1,14 +1,12 @@
 ---
 ### COMMON ###
 
-extra_packages:
-  - broadcom-wl-dkms
+extra_packages: []
 extra_packages_aur:
   - vendor-reset-dkms-git
 
-bridge: true
-bridge_interfaces:
-  - "eno1"
+bridge: false
+bridge_interfaces: []
 firewall_tcp:
   # SSH
   - 22
@@ -17,14 +15,15 @@ firewall_tcp:
 firewall_udp:
   # Wake-On-LAN
   - 9
+  # Syncthing
+  - 22000
   # Syncthing discovery broadcasts
   - 21027
 
 ### KVM ###
 
-passthrough: true
-passthrough_options:
-  - options vfio-pci ids=1002:731f,1002:ab38
+passthrough: false
+passthrough_options: []
 
 ### TASKS ###
 
