@@ -5,13 +5,13 @@
     state: present
 
 - name: Check whether the tungsten printer is already added
-  shell: lpstat -v
+  ansible.builtin.command: lpstat -v
   register: printer_list
   failed_when: false
   changed_when: false
 
 - name: Add the tungsten printer
-  shell: lpadmin -p tungsten -D "Brother MFC-L2730DW series" -E -L "Office" -v "ipp://tungsten.lan:631/ipp"
+  ansible.builtin.command: lpadmin -p tungsten -D "Brother MFC-L2730DW series" -E -L "Office" -v "ipp://tungsten.lan:631/ipp"
   when: "'tungsten' not in printer_list.stdout"
 
 - name: Set paper type to A4 (system-wide)

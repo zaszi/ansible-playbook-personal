@@ -1,6 +1,6 @@
 ---
 - name: Ensure /var/www/zaszi.web exists
-  file:
+  ansible.builtin.file:
     path: "/var/www/zaszi.net"
     owner: root
     group: root
@@ -8,7 +8,7 @@
     state: directory
 
 - name: Copy zaszi.net web root
-  synchronize:
+  ansible.posix.synchronize:
     src: files/zaszi-web/
     dest: /var/www/zaszi.net/
     copy_links: true
@@ -16,7 +16,7 @@
       - "--exclude=.git"
 
 - name: Set zaszi.net web root permissions
-  file:
+  ansible.builtin.file:
     path: /var/www/zaszi.net
     owner: root
     group: root

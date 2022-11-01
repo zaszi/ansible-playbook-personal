@@ -1,6 +1,6 @@
 ---
 - name: Install extra (host-specific) packages
-  pacman:
+  community.general.pacman:
     name: "{{ extra_packages }}"
     state: present
   when: "extra_packages | length > 0"

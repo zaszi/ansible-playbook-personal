@@ -9,12 +9,12 @@
       - edk2-ovmf
       - libvirt
       - polkit
-      - qemu
+      - qemu-full
       - virt-manager
     state: present
 
 - name: Install vfio udev rules
-  copy:
+  ansible.builtin.copy:
     src: qemu-hw-users.rules
     dest: /etc/udev/rules.d/10-qemu-hw-users.rules
     owner: root
@@ -23,7 +23,7 @@
   when: passthrough|bool
 
 - name: Install dracut configuration file
-  copy:
+  ansible.builtin.copy:
     src: dracut-vfio.conf
     dest: /etc/dracut.conf.d/20-vfio.conf
     owner: root
@@ -32,7 +32,7 @@
   when: passthrough|bool
 
 - name: Install vfio kernel module options
-  template:
+  ansible.builtin.template:
     src: modprobe-vfio.conf.j2
     dest: /etc/modprobe.d/vfio.conf
     owner: root
@@ -41,7 +41,7 @@
   when: passthrough|bool
 
 - name: Set up passwordless polkit rules
-  copy:
+  ansible.builtin.copy:
     src: nopasswd_global.rules
     dest: /etc/polkit-1/rules.d/49-nopasswd_global.rules
     owner: root
@@ -49,7 +49,7 @@
     mode: 0644
 
 - name: Enable services
-  service:
+  ansible.builtin.service:
     name: libvirtd
     enabled: true
     state: started

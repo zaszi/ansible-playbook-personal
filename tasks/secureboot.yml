@@ -9,12 +9,12 @@
     state: present
 
 - name: Verify whether keys have already been generated
-  stat:
+  ansible.builtin.stat:
     path: "/boot/secureboot"
   register: config
 
 - name: Ensure /boot/secureboot exists
-  file:
+  ansible.builtin.file:
     path: "/boot/secureboot"
     owner: root
     group: root
@@ -23,13 +23,13 @@
   when: not config.stat.exists
 
 - name: Generate a GUID
-  shell: uuidgen --random > GUID.txt
+  ansible.builtin.shell: uuidgen --random > GUID.txt
   args:
     chdir: /boot/secureboot
   when: not config.stat.exists
 
 - name: Generate a Platform Key
-  shell: |
+  ansible.builtin.shell: |
     openssl req -newkey rsa:4096 -nodes -keyout PK.key -new -x509 -sha256 \
     -days 3650 -subj "/CN=Zaszi's Platform Key/" -out PK.crt
     openssl x509 -outform DER -in PK.crt -out PK.cer
@@ -42,7 +42,7 @@
   when: not config.stat.exists
 
 - name: Generate a Key Exchange Key
-  shell: |
+  ansible.builtin.shell: |
     openssl req -newkey rsa:4096 -nodes -keyout KEK.key -new -x509 -sha256 \
     -days 3650 -subj "/CN=Zaszi's Key Exchange Key/" -out KEK.crt
     openssl x509 -outform DER -in KEK.crt -out KEK.cer
@@ -54,7 +54,7 @@
   when: not config.stat.exists
 
 - name: Generate a Signature Database Key
-  shell: |
+  ansible.builtin.shell: |
     openssl req -newkey rsa:4096 -nodes -keyout db.key -new -x509 -sha256 \
     -days 3650 -subj "/CN=Zaszi's Signature Database Key/" -out db.crt
     openssl x509 -outform DER -in db.crt -out db.cer
@@ -65,12 +65,12 @@
   when: not config.stat.exists
 
 - name: Verify whether the systemd-boot binary has been signed
-  shell: sbverify --list /boot/efi/EFI/systemd/systemd-bootx64.efi
+  ansible.builtin.command: sbverify --list /boot/efi/EFI/systemd/systemd-bootx64.efi
   register: systemd_sign
   changed_when: false
 
 - name: Sign the current systemd-boot binary
-  shell: |
+  ansible.builtin.shell: |
     sbsign --key db.key --cert db.crt --output \
     /boot/efi/EFI/systemd/systemd-bootx64.efi \
     /boot/efi/EFI/systemd/systemd-bootx64.efi
@@ -79,12 +79,12 @@
   when: systemd_sign.stderr.find("No signature table present") != -1
 
 - name: Verify whether the bootloader has been signed
-  shell: sbverify --list /boot/efi/EFI/BOOT/BOOTX64.EFI
+  ansible.builtin.command: sbverify --list /boot/efi/EFI/BOOT/BOOTX64.EFI
   register: bootloader_sign
   changed_when: false
 
 - name: Sign the current bootloader
-  shell: |
+  ansible.builtin.shell: |
     sbsign --key db.key --cert db.crt --output \
     /boot/efi/EFI/BOOT/BOOTX64.EFI \
     /boot/efi/EFI/BOOT/BOOTX64.EFI
@@ -93,19 +93,19 @@
   when: bootloader_sign.stderr.find("No signature table present") != -1
 
 - name: Verify whether the kernel bundle has been signed
-  shell: sbverify --list /boot/efi/EFI/Linux/arch.efi
+  ansible.builtin.command: sbverify --list /boot/efi/EFI/Linux/arch.efi
   register: kernel_sign
   changed_when: false
 
 - name: Sign the current kernel bundle
-  shell: sbsign --key db.key --cert db.crt --output \
+  ansible.builtin.command: sbsign --key db.key --cert db.crt --output \
     /boot/efi/EFI/Linux/arch.efi /boot/efi/EFI/Linux/arch.efi
   args:
     chdir: /boot/secureboot
   when: kernel_sign.stderr.find("No signature table present") != -1
 
 - name: Install pacman hook for bootloader
-  copy:
+  ansible.builtin.copy:
     src: systemd-boot.hook
     dest: /etc/pacman.d/hooks/91-systemd-boot.hook
     owner: root
@@ -113,7 +113,7 @@
     mode: 0644
 
 - name: Install pacman hook for bundled kernel preparation
-  copy:
+  ansible.builtin.copy:
     src: kernel-bundle.hook
     dest: /etc/pacman.d/hooks/92-kernel-bundle.hook
     owner: root
@@ -121,7 +121,7 @@
     mode: 0644
 
 - name: Set restrictive permissions on /boot/secureboot
-  file:
+  ansible.builtin.file:
     path: "/boot/secureboot"
     mode: "u=rwX,g-rwx,o-rwx"
     recurse: true

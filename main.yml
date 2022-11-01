@@ -1,65 +1,83 @@
 ---
-- hosts: all
+
+- name: Deploy common to all hosts
+  hosts: all
   become: true
   roles:
     - common
   tasks:
-    - include_tasks: tasks/banner.yml
-    - include_tasks: tasks/extra_packages.yml
+    - name: Set MOTD banner
+      ansible.builtin.include_tasks: tasks/banner.yml
+    - name: Deploy extra packages as per host_vars
+      ansible.builtin.include_tasks: tasks/extra_packages.yml
   tags: common
 
-- hosts: workstations
+- name: Deploy Secure Boot to workstations
+  hosts: workstations
   become: true
   tasks:
-    - include_tasks: tasks/secureboot.yml
+    - name: Deploy Secure Boot
+      ansible.builtin.include_tasks: tasks/secureboot.yml
   tags: secureboot
 
-- hosts: workstations
-  become: true
-  tasks:
-    - include_tasks: tasks/kvm.yml
-  tags: kvm
+# - name: Deploy KVM to workstations
+#   hosts: workstations
+#   become: true
+#   tasks:
+#     - name: Deploy KVM
+#       include_tasks: tasks/kvm.yml
+#   tags: kvm
 
-- hosts: workstations
+- name: Deploy cups to workstations
+  hosts: workstations
   become: false
   tasks:
-    - include_tasks: tasks/cups.yml
+    - name: Deploy cups
+      ansible.builtin.include_tasks: tasks/cups.yml
   tags: cups
 
-- hosts: slate
+- name: Deploy custom drivers to slate
+  hosts: slate
   become: true
   tasks:
-    - include_tasks: tasks/rtl8821ce.yml
+    - name: Deploy RTL8821ce wireless network driver
+      ansible.builtin.include_tasks: tasks/rtl8821ce.yml
   tags: driver
 
-- hosts: galena slate
+- name: Deploy VPN to galena and slate
+  hosts: galena slate
   become: true
   roles:
     - wireguard
   tags: vpn
 
-- hosts: galena
+- name: Deploy reverse proxy to galena
+  hosts: galena
   become: true
   roles:
     - nginx
     - certbot
   tags: proxy
 
-- hosts: galena
+- name: Deploy DNS to galena
+  hosts: galena
   become: true
   roles:
     - pihole
   tags: dns
 
-- hosts: gabbro
+- name: Deploy web server to gabbro
+  hosts: gabbro
   become: true
   roles:
     - nginx
   tasks:
-    - include_tasks: tasks/zaszi-web.yml
+    - name: Deploy zaszi.net website
+      ansible.builtin.include_tasks: tasks/zaszi-web.yml
   tags: web
 
-- hosts: all
+- name: Deploy dotfiles to all hosts
+  hosts: all
   become: false
   roles:
     - dotfiles
