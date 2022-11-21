@@ -126,6 +126,7 @@ packages_aur:
   - postman-bin
   - pulseaudio-ctl
   - shellcheck-bin
+  - spotify
   - telegram-desktop-bin
   - wl-clipboard-x11
   - yay
