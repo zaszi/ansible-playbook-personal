@@ -30,7 +30,7 @@
 
 - name: Deploy cups to workstations
   hosts: workstations
-  become: false
+  become: true
   tasks:
     - name: Deploy cups
       ansible.builtin.include_tasks: tasks/cups.yml
