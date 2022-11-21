@@ -28,3 +28,10 @@ passthrough_options: []
 ### TASKS ###
 
 cpu: "amd"
+
+### DOTFILES ###
+
+sway_host_config: |
+  output HDMI-A-1 mode 1920x1080 pos 1920 0
+  output HDMI-A-2 mode 1920x1080 pos 0 0
+  output DP-3 disable
