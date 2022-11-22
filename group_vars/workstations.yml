@@ -42,7 +42,6 @@ packages:
   - htop
   - imv
   - inetutils
-  - iwd
   - jp2a
   - jq
   - ldns
@@ -189,16 +188,8 @@ services:
   - bluetooth.service
   - cups.socket
   - fstrim.timer
-  - iptables.service
-  - ip6tables.service
   - paccache.timer
-  - iwd.service
   - pcscd.socket
-  - reflector.timer
-  - sshd.service
-  - systemd-networkd.service
-  - systemd-resolved.service
-  - systemd-timesyncd.service
 
 ### DOTFILES ###
 

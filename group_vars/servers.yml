@@ -89,13 +89,7 @@ ntp_fallback:
 ### COMMON - SERVICES ###
 
 services:
-  - iptables.service
-  - ip6tables.service
   - paccache.timer
-  - sshd.service
-  - systemd-networkd.service
-  - systemd-resolved.service
-  - systemd-timesyncd.service
 
 ### DOTFILES ###
 
