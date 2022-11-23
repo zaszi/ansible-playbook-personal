@@ -32,3 +32,9 @@ passthrough_options: []
 ### TASKS ###
 
 cpu: "intel"
+
+### DOTFILES ###
+
+sway_host_config: |
+  output eDP-1 mode 1920x1080 pos 1920 0
+  output HDMI-A-1 mode 1920x1080 pos 0 0
