@@ -76,6 +76,7 @@ packages:
   - pulsemixer
   - python
   - python-adblock
+  - python-passlib
   - pwgen
   - qrencode
   - qt5-wayland
@@ -121,6 +122,7 @@ packages:
 packages_aur:
   - ansible-aur
   - ansible-language-server
+  - freetube-bin
   - pandoc-bin
   - postman-bin
   - pulseaudio-ctl
