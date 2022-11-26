@@ -14,4 +14,4 @@ firewall_udp: []
 
 vhost_location: "../files/vhosts"
 vhosts:
-  - zaszi_web.conf
+  - zaszi_backend

@@ -31,4 +31,6 @@ wg_address6: fdd7:885c:bf88::1/48
 
 vhost_location: ../files/vhosts
 vhosts:
-  - zaszi_proxy.conf
+  - zaszi.net
+  - hass.zaszi.net
+  - pi.hole

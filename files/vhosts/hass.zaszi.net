@@ -1,0 +1,40 @@
+include conf.d/map.conf;
+
+upstream hass {
+    zone upstream 64K;
+    server gypsum.lan:8123 max_fails=2 fail_timeout=5s;
+
+    keepalive 32;
+    keepalive_timeout 5m;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name hass.zaszi.net;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+
+    include conf.d/letsencrypt.conf;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name hass.zaszi.net;
+
+    ssl_certificate /etc/letsencrypt/live/zaszi.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/zaszi.net/privkey.pem;
+
+    include conf.d/ssl.conf;
+
+    location / {
+        proxy_pass http://hass$request_uri;
+
+        include conf.d/proxy.conf;
+    }
+
+    include conf.d/letsencrypt.conf;
+}

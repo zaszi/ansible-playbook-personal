@@ -1,0 +1,54 @@
+include conf.d/map.conf;
+
+upstream web {
+    zone upstream 64K;
+    server gabbro.lan:80 max_fails=2 fail_timeout=5s;
+
+    keepalive 32;
+    keepalive_timeout 5m;
+}
+
+upstream chat {
+    zone upstream 64K;
+    server gneiss.lan:9001 max_fails=2 fail_timeout=5s;
+
+    keepalive 32;
+    keepalive_timeout 5m;
+}
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name zaszi.net www.zaszi.net;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+
+    include conf.d/letsencrypt.conf;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    server_name zaszi.net www.zaszi.net;
+
+    ssl_certificate /etc/letsencrypt/live/zaszi.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/zaszi.net/privkey.pem;
+
+    include conf.d/ssl.conf;
+
+    location / {
+        proxy_pass http://web$request_uri;
+
+        include conf.d/proxy.conf;
+    }
+
+    location /weechat {
+        proxy_pass http://chat$request_uri;
+
+        include conf.d/proxy.conf;
+    }
+
+    include conf.d/letsencrypt.conf;
+}
