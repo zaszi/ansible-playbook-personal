@@ -63,7 +63,7 @@ packages:
   - pacman-contrib
   - parted
   - pass
-  - pdfjs
+  - pdfjs-legacy
   - pipewire
   - pipewire-media-session
   - pkgfile
