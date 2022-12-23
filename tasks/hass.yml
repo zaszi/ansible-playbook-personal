@@ -1,0 +1,36 @@
+---
+
+- name: Create hass user
+  ansible.builtin.user:
+    name: hass
+    state: present
+    groups:
+      - network
+    create_home: true
+
+- name: Ensure hass user can use passwordless shutdown
+  ansible.builtin.lineinfile:
+    dest: "/etc/sudoers.d/hass"
+    line: "hass ALL=(ALL) NOPASSWD: /usr/bin/poweroff"
+    state: present
+    owner: root
+    group: root
+    mode: 0440
+    create: true
+    validate: "visudo -cf %s"
+
+- name: Set authorized keys for user(s)
+  ansible.posix.authorized_key:
+    user: hass
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD0jG0nj3WAtEidtNcv3RpduZ31\
+          FS+06urWaDLR6eHQIoe4JmHJibSZqrzRNU8H52dDVfcBr/3N1aRKh+\
+          dfRa0QxVhoRMODQJta4J2K32zT+UwUdYWDTfh3RiI0OmqqTaR41bdqNpPzsNpNa\
+          17q2+lqKR28Jl4nsOIfT4QIpDuNsKhmq3Fvl+mJZLCNzJJrF0HJlHwkvQU3w3YZ\
+          1fVtg/qoKsO87oHBqKUPtuBCKHlZbs2xXJxgKIcooUTzOnnKCF0fpiGn9KzPzVvI\
+          IVynmouLP1tEJVenzWT0pZO8hztkBnvTZ0To5NJwg2qmniF0ofB6r2x+\
+          k3XFKET180DGPdKdveYVrzJeuv0qAL5g/jXEC7+zzLFTUQunlXzaiRN7GmeDVD1+\
+          yf5fOgICtqFWoFnXIX4DgDmE9cXdE0fI6hXv3HtFIRscxdV/LDwG5Uaz/\
+          Yp9ibbJK90W9OSP/z18Ie41xlMSLRyT+9tLfc7q0mGwhBAbP6Bc7OBKsnOJHW/+\
+          Rak= root@core-ssh"
+    exclusive: true
+    state: present
