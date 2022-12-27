@@ -30,6 +30,7 @@ packages:
   - python
   - rsync
   - sshpass
+  - starship
   - tcpdump
   - tmux
   - traceroute
