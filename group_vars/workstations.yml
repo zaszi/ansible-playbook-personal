@@ -3,6 +3,8 @@
 
 timezone: Europe/Brussels
 dracut: true
+mirrors:
+  - Germany
 
 ### COMMON - PACKAGES ###
 
