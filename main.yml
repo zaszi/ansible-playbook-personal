@@ -22,13 +22,13 @@
       ansible.builtin.include_tasks: tasks/secureboot.yml
   tags: secureboot
 
-# - name: Deploy KVM to workstations
-#   hosts: workstations
-#   become: true
-#   tasks:
-#     - name: Deploy KVM
-#       include_tasks: tasks/kvm.yml
-#   tags: kvm
+- name: Deploy KVM to workstations
+  hosts: workstations
+  become: true
+  tasks:
+    - name: Deploy KVM
+      ansible.builtin.include_tasks: tasks/kvm.yml
+  tags: kvm
 
 - name: Deploy cups to workstations
   hosts: workstations

@@ -3,10 +3,12 @@
 
 extra_packages: []
 extra_packages_aur:
+  - looking-glass
   - vendor-reset-dkms-git
 
-bridge: false
-bridge_interfaces: []
+bridge: true
+bridge_interfaces:
+  - enp5s0
 firewall_tcp:
   # SSH
   - 22
@@ -20,14 +22,13 @@ firewall_udp:
   # Syncthing discovery broadcasts
   - 21027
 
-### KVM ###
-
-passthrough: false
-passthrough_options: []
-
 ### TASKS ###
 
 cpu: "amd"
+passthrough: true
+passthrough_options:
+  - 1002:731f
+  - 1002:ab38
 
 ### DOTFILES ###
 

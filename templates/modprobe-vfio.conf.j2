@@ -1,1 +1,1 @@
-{{ passthrough_options | join('\n') }}
+options vfio-pci ids={{ passthrough_options | join(',') }}

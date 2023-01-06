@@ -2,25 +2,21 @@
 - name: Install dependencies
   community.general.pacman:
     name:
-      - bridge-utils
       - dnsmasq
-      - dmidecode
-      - ebtables
       - edk2-ovmf
       - libvirt
       - polkit
-      - qemu-full
+      - qemu-desktop
       - virt-manager
     state: present
 
-- name: Install vfio udev rules
+- name: Set up passwordless polkit rules
   ansible.builtin.copy:
-    src: qemu-hw-users.rules
-    dest: /etc/udev/rules.d/10-qemu-hw-users.rules
+    src: nopasswd_global.rules
+    dest: /etc/polkit-1/rules.d/49-nopasswd_global.rules
     owner: root
     group: root
     mode: 0644
-  when: passthrough|bool
 
 - name: Install dracut configuration file
   ansible.builtin.copy:
@@ -40,16 +36,24 @@
     mode: 0644
   when: passthrough|bool
 
-- name: Set up passwordless polkit rules
+- name: Install shared memory file config (Looking Glass)
   ansible.builtin.copy:
-    src: nopasswd_global.rules
-    dest: /etc/polkit-1/rules.d/49-nopasswd_global.rules
+    src: looking-glass.conf
+    dest: /etc/tmpfiles.d/10-looking-glass.conf
     owner: root
     group: root
     mode: 0644
+  when: passthrough|bool
 
-- name: Enable services
+- name: Set libvirt user for PulseAudio
+  ansible.builtin.lineinfile:
+    path: /etc/libvirt/qemu.conf
+    regexp: '#user = "libvirt-qemu-"'
+    line: 'user = "zaszi"'
+  when: passthrough|bool
+
+- name: Enable libvirtd service
   ansible.builtin.service:
-    name: libvirtd
+    name: libvirtd.service
     enabled: true
     state: started
