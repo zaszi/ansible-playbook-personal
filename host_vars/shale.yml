@@ -29,6 +29,7 @@ passthrough: true
 passthrough_options:
   - 1002:731f
   - 1002:ab38
+passthrough_address: "0000:0d:00.0"
 
 ### DOTFILES ###
 
