@@ -78,13 +78,6 @@
       ansible.builtin.include_tasks: tasks/zaszi-web.yml
   tags: web
 
-- name: Deploy Home Assistant to gypsum
-  hosts: gypsum
-  become: true
-  roles:
-    - homeassistant
-  tags: hass
-
 - name: Deploy dotfiles to all hosts
   hosts: all
   become: false

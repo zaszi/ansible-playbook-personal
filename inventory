@@ -6,7 +6,6 @@ slate ansible_host=slate.lan
 gabbro ansible_host=gabbro.lan
 galena ansible_host=galena.lan
 gneiss ansible_host=gneiss.lan
-gypsum ansible_host=gypsum.lan
 
 [zaszi:children]
 workstations
