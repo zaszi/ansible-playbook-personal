@@ -10,8 +10,6 @@
       ansible.builtin.include_tasks: tasks/banner.yml
     - name: Deploy extra packages as per host_vars
       ansible.builtin.include_tasks: tasks/extra_packages.yml
-    - name: Deploy Home Assistant user for remote shutdown
-      ansible.builtin.include_tasks: tasks/hass.yml
   tags: common
 
 - name: Deploy Secure Boot to workstations
@@ -77,6 +75,14 @@
     - name: Deploy zaszi.net website
       ansible.builtin.include_tasks: tasks/zaszi-web.yml
   tags: web
+
+- name: Deploy Home Assistant additions to other hosts
+  hosts: shale
+  become: true
+  tasks:
+    - name: Deploy Home Assistant user for remote shutdown
+      ansible.builtin.include_tasks: tasks/hass.yml
+  tags: hass
 
 - name: Deploy dotfiles to all hosts
   hosts: all
