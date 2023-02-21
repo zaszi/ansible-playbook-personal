@@ -5,6 +5,7 @@ extra_packages: []
 extra_packages_aur:
   - looking-glass
   - vendor-reset-dkms-git
+extra_services: []
 
 bridge: true
 bridge_interfaces:

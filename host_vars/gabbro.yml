@@ -2,6 +2,7 @@
 
 extra_packages: []
 extra_packages_aur: []
+extra_services: []
 
 firewall_tcp:
   # SSH

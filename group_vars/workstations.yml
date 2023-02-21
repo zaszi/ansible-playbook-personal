@@ -19,8 +19,6 @@ packages:
   - bash-completion
   - bash-language-server
   - bat
-  - bluez
-  - bluez-utils
   - ccid
   - clang
   - cloc
@@ -74,7 +72,6 @@ packages:
   - prettier
   - pulseaudio
   - pulseaudio-alsa
-  - pulseaudio-bluetooth
   - pulsemixer
   - python
   - python-adblock
@@ -189,7 +186,6 @@ ntp_fallback:
 ### COMMON - SERVICES ###
 
 services:
-  - bluetooth.service
   - cups.socket
   - fstrim.timer
   - paccache.timer

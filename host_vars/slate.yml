@@ -1,9 +1,14 @@
 ---
 ### COMMON ###
 
-extra_packages: []
+extra_packages:
+  - bluez
+  - bluez-utils
+  - pulseaudio-bluetooth
 extra_packages_aur:
   - rtl8821ce-dkms-git
+extra_services:
+  - bluetooth.service
 
 wireless: true
 firewall_tcp:
