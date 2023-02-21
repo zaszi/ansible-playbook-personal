@@ -49,7 +49,6 @@
   ansible.builtin.systemd:
     name: vfio_reset.service
     enabled: true
-    state: started
     daemon_reload: true
   when: passthrough|bool
 
