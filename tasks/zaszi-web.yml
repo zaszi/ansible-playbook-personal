@@ -3,8 +3,8 @@
   ansible.builtin.file:
     path: "/var/www/zaszi.net"
     owner: root
-    group: root
-    mode: 0755
+    group: http
+    mode: 0775
     state: directory
 
 - name: Copy zaszi.net web root
@@ -14,14 +14,5 @@
     copy_links: true
     rsync_opts:
       - "--exclude=.git"
-
-- name: Set zaszi.net web root permissions
-  ansible.builtin.file:
-    path: /var/www/zaszi.net
-    owner: root
-    group: root
-    mode: "u=rwX,g=rX,o=rX"
-    recurse: true
-    follow: false
-    modification_time: "preserve"
-    access_time: "preserve"
+      - "--chown=root:http"
+      - "--chmod=Du=rwx,Dg=rwx,Do=rx,Fu=rw,Fg=rw,Fo=r"
