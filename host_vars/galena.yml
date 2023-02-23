@@ -34,4 +34,3 @@ vhost_location: ../files/vhosts
 vhosts:
   - zaszi.net
   - hass.zaszi.net
-  - pi.hole
