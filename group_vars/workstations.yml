@@ -73,6 +73,7 @@ packages:
   - pulseaudio
   - pulseaudio-alsa
   - pulsemixer
+  - pv
   - python
   - python-adblock
   - python-passlib
