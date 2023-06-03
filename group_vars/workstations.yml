@@ -124,6 +124,7 @@ packages_aur:
   - ansible-aur
   - ansible-language-server
   - freetube-bin
+  - gruvbox-dark-gtk
   - pandoc-bin
   - postman-bin
   - pulseaudio-ctl
