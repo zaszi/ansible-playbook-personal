@@ -35,6 +35,4 @@ passthrough_address: "0000:0d:00.0"
 ### DOTFILES ###
 
 sway_host_config: |
-  output HDMI-A-1 mode 1920x1080 pos 1920 0
-  output HDMI-A-2 mode 1920x1080 pos 0 0
-  output DP-3 disable
+  output DP-2 mode 5120x1440@119.970Hz pos 0 0

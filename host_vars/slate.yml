@@ -38,5 +38,5 @@ passthrough_options: []
 ### DOTFILES ###
 
 sway_host_config: |
-  output eDP-1 mode 1920x1080 pos 1920 0
-  output HDMI-A-1 mode 1920x1080 pos 0 0
+  output eDP-1 mode 1920x1080 pos 0 0
+  output HDMI-A-1 mode 2560x1080@74.944Hz pos 1920 0
