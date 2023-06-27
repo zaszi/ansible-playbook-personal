@@ -64,7 +64,6 @@ packages:
   - pass
   - pdfjs-legacy
   - pipewire
-  - pipewire-media-session
   - pkgfile
   - pkgstats
   - playerctl
@@ -110,8 +109,6 @@ packages:
   - waybar
   - wine
   - wl-clipboard
-  - xdg-desktop-portal
-  - xdg-desktop-portal-wlr
   - xdg-user-dirs
   - xorg-server-xwayland
   - xorg-xeyes
@@ -200,7 +197,6 @@ bash: true
 bash_root: true
 mako: true
 neovim: true
-pipewire: true
 qutebrowser: true
 rust: true
 rust_components:

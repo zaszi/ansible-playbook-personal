@@ -98,7 +98,6 @@ bash: true
 bash_root: true
 mako: false
 neovim: true
-pipewire: false
 qutebrowser: false
 rust: false
 rust_components: []
