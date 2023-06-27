@@ -20,6 +20,7 @@ packages:
   - bash-language-server
   - bat
   - ccid
+  - chromium
   - clang
   - cloc
   - cups
