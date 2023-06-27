@@ -20,13 +20,13 @@
       ansible.builtin.include_tasks: tasks/secureboot.yml
   tags: secureboot
 
-- name: Deploy KVM to workstations
+- name: Set up VFIO on workstations
   hosts: workstations
   become: true
   tasks:
-    - name: Deploy KVM
-      ansible.builtin.include_tasks: tasks/kvm.yml
-  tags: kvm
+    - name: Deploy VFIO
+      ansible.builtin.include_tasks: tasks/vfio.yml
+  tags: vfio
 
 - name: Deploy cups to workstations
   hosts: workstations
