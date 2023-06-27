@@ -45,7 +45,6 @@ packages:
   - jp2a
   - jq
   - ldns
-  - light
   - linux-headers
   - lolcat
   - lua-language-server

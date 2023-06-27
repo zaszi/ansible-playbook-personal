@@ -4,6 +4,7 @@
 extra_packages:
   - bluez
   - bluez-utils
+  - light
   - pulseaudio-bluetooth
 extra_packages_aur:
   - rtl8821ce-dkms-git
@@ -38,5 +39,7 @@ passthrough_options: []
 ### DOTFILES ###
 
 sway_host_config: |
+  set $brightness_up light -A 5 -s sysfs/backlight/intel_backlight
+  set $brightness_down light -U 5 -s sysfs/backlight/intel_backlight
   output eDP-1 mode 1920x1080 pos 0 0
   output HDMI-A-1 mode 2560x1080@74.944Hz pos 1920 0

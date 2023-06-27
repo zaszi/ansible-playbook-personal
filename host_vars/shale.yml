@@ -1,7 +1,8 @@
 ---
 ### COMMON ###
 
-extra_packages: []
+extra_packages:
+  - ddcutil
 extra_packages_aur:
   - looking-glass
 extra_services: []
@@ -34,4 +35,6 @@ passthrough_address: "0000:0d:00.0"
 ### DOTFILES ###
 
 sway_host_config: |
+  set $brightness_up ddcutil setvcp 10 + 20
+  set $brightness_down ddcutil setvcp 10 - 20
   output DP-2 mode 5120x1440@119.970Hz pos 0 0

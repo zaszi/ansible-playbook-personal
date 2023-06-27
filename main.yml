@@ -36,6 +36,14 @@
       ansible.builtin.include_tasks: tasks/cups.yml
   tags: cups
 
+- name: Set up backlight configuration to shale
+  hosts: shale
+  become: true
+  tasks:
+    - name: Set up backlight
+      ansible.builtin.include_tasks: tasks/backlight.yml
+  tags: backlight
+
 - name: Deploy custom drivers to slate
   hosts: slate
   become: true
