@@ -100,7 +100,7 @@ packages:
   - swayidle
   - syncthing
   - tcpdump
-  - texlive-core
+  - texlive-basic
   - texlive-latexextra
   - tmux
   - traceroute
