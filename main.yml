@@ -36,21 +36,23 @@
       ansible.builtin.include_tasks: tasks/cups.yml
   tags: cups
 
-- name: Set up backlight configuration to shale
+- name: Run specific tasks for shale
   hosts: shale
   become: true
   tasks:
     - name: Set up backlight
       ansible.builtin.include_tasks: tasks/backlight.yml
-  tags: backlight
+    - name: Set up VIA
+      ansible.builtin.include_tasks: tasks/via.yml
+  tags: shale
 
-- name: Deploy custom drivers to slate
+- name: Run specific tasks for slate
   hosts: slate
   become: true
   tasks:
     - name: Deploy RTL8821ce wireless network driver
       ansible.builtin.include_tasks: tasks/rtl8821ce.yml
-  tags: driver
+  tags: slate
 
 - name: Deploy VPN to galena and slate
   hosts: galena slate
