@@ -6,51 +6,41 @@
   roles:
     - common
   tasks:
+    - name: Install extra packages as per host_vars
+      ansible.builtin.include_tasks: tasks/extra_packages.yml
     - name: Set MOTD banner
       ansible.builtin.include_tasks: tasks/banner.yml
-    - name: Deploy extra packages as per host_vars
-      ansible.builtin.include_tasks: tasks/extra_packages.yml
   tags: common
 
-- name: Deploy Secure Boot to workstations
+- name: Run specific tasks for workstations
   hosts: workstations
   become: true
   tasks:
-    - name: Deploy Secure Boot
-      ansible.builtin.include_tasks: tasks/secureboot.yml
-  tags: secureboot
-
-- name: Set up VFIO on workstations
-  hosts: workstations
-  become: true
-  tasks:
-    - name: Deploy VFIO
-      ansible.builtin.include_tasks: tasks/vfio.yml
-  tags: vfio
-
-- name: Deploy cups to workstations
-  hosts: workstations
-  become: true
-  tasks:
-    - name: Deploy cups
+    - name: Configure backlight
+      ansible.builtin.include_tasks: tasks/backlight.yml
+    - name: Configure cups
       ansible.builtin.include_tasks: tasks/cups.yml
-  tags: cups
+    - name: Configure Secure Boot
+      ansible.builtin.include_tasks: tasks/secureboot.yml
+    - name: Configure VFIO
+      ansible.builtin.include_tasks: tasks/vfio.yml
+  tags: workstations
 
 - name: Run specific tasks for shale
   hosts: shale
   become: true
   tasks:
-    - name: Set up backlight
-      ansible.builtin.include_tasks: tasks/backlight.yml
-    - name: Set up VIA
+    - name: Configure VIA
       ansible.builtin.include_tasks: tasks/via.yml
+    - name: Add Home Assistant user for remote shutdown
+      ansible.builtin.include_tasks: tasks/hass.yml
   tags: shale
 
 - name: Run specific tasks for slate
   hosts: slate
   become: true
   tasks:
-    - name: Deploy RTL8821ce wireless network driver
+    - name: Add RTL8821ce wireless network driver
       ansible.builtin.include_tasks: tasks/rtl8821ce.yml
   tags: slate
 
@@ -85,14 +75,6 @@
     - name: Deploy zaszi.net website
       ansible.builtin.include_tasks: tasks/zaszi-web.yml
   tags: web
-
-- name: Deploy Home Assistant additions to other hosts
-  hosts: shale
-  become: true
-  tasks:
-    - name: Deploy Home Assistant user for remote shutdown
-      ansible.builtin.include_tasks: tasks/hass.yml
-  tags: hass
 
 - name: Deploy dotfiles to all hosts
   hosts: all
