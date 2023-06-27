@@ -6,6 +6,7 @@
       - edk2-ovmf
       - libvirt
       - polkit
+      - dmidecode
       - qemu-desktop
       - virt-manager
     state: present
@@ -34,22 +35,6 @@
     owner: root
     group: root
     mode: 0644
-  when: passthrough|bool
-
-- name: Install vendor reset unit file
-  ansible.builtin.template:
-    src: vfio_reset.service.j2
-    dest: /etc/systemd/system/vfio_reset.service
-    owner: root
-    group: root
-    mode: 0644
-  when: passthrough|bool
-
-- name: Enable vendor reset unit file
-  ansible.builtin.systemd:
-    name: vfio_reset.service
-    enabled: true
-    daemon_reload: true
   when: passthrough|bool
 
 - name: Install shared memory file config (Looking Glass)

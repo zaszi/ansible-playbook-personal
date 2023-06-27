@@ -4,7 +4,6 @@
 extra_packages: []
 extra_packages_aur:
   - looking-glass
-  - vendor-reset-dkms-git
 extra_services: []
 
 bridge: true
@@ -28,8 +27,8 @@ firewall_udp:
 cpu: "amd"
 passthrough: true
 passthrough_options:
-  - 1002:731f
-  - 1002:ab38
+  - 1002:744c
+  - 1002:ab30
 passthrough_address: "0000:0d:00.0"
 
 ### DOTFILES ###
