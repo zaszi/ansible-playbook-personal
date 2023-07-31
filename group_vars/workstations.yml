@@ -64,6 +64,7 @@ packages:
   - parted
   - pass
   - pdfjs-legacy
+  - picocom
   - pipewire
   - pkgfile
   - pkgstats
