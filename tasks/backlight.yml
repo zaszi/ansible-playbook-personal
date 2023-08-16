@@ -1,7 +1,7 @@
 - name: Install DDCCI kernel module
   ansible.builtin.copy:
     src: modprobe-backlight.conf
-    dest: /etc/modprobe.d/backlight.conf
+    dest: /etc/modules-load.d/backlight.conf
     owner: root
     group: root
     mode: 0644
