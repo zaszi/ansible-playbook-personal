@@ -87,6 +87,7 @@ packages:
   - rsync
   - rust-analyzer
   - rustup
+  - sbctl
   - shfmt
   - slurp
   - socat

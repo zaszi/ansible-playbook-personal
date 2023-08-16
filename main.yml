@@ -20,8 +20,6 @@
       ansible.builtin.include_tasks: tasks/backlight.yml
     - name: Configure cups
       ansible.builtin.include_tasks: tasks/cups.yml
-    - name: Configure Secure Boot
-      ansible.builtin.include_tasks: tasks/secureboot.yml
     - name: Configure VFIO
       ansible.builtin.include_tasks: tasks/vfio.yml
   tags: workstations

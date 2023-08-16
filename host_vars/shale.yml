@@ -3,6 +3,7 @@
 
 extra_packages:
   - ddcutil
+  - amd-ucode
 extra_packages_aur:
   - looking-glass
 extra_services: []
