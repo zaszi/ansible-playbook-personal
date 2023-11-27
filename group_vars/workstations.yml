@@ -29,7 +29,7 @@ packages:
   - discord
   - dosfstools
   - eid-mw
-  - exa
+  - eza
   - fd
   - figlet
   - fortune-mod
