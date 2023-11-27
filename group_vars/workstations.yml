@@ -65,6 +65,7 @@ packages:
   - pass
   - pdfjs-legacy
   - picocom
+  - pigz
   - pipewire
   - pkgfile
   - pkgstats
