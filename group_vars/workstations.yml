@@ -93,6 +93,7 @@ packages:
   - slurp
   - socat
   - ssh-audit
+  - sshpass
   - starship
   - steam
   - stylua
