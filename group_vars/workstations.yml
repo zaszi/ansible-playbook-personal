@@ -138,7 +138,7 @@ packages_aur:
 ### USERS & GROUPS ###
 
 xdg: true
-groups:
+user_groups:
   - wheel
   - network
 sudoers:

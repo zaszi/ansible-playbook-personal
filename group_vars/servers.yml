@@ -42,7 +42,7 @@ packages_aur:
 ### USERS & GROUPS ###
 
 xdg: false
-groups:
+user_groups:
   - wheel
   - network
 sudoers:
