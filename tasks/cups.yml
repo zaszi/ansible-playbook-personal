@@ -12,6 +12,7 @@
 
 - name: Add the tungsten printer
   ansible.builtin.command: lpadmin -p tungsten -D "Brother MFC-L2730DW series" -E -L "Office" -v "ipp://tungsten.lan:631/ipp"
+  changed_when: true
   when: "'tungsten' not in printer_list.stdout"
 
 - name: Set paper type to A4 (system-wide)
