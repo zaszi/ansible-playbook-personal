@@ -5,5 +5,5 @@
     line: "blacklist rtw88_8821ce"
     owner: root
     group: root
-    mode: 0644
+    mode: '644'
     create: true

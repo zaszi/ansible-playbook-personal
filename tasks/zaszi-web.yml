@@ -4,7 +4,7 @@
     path: "/var/www/zaszi.net"
     owner: root
     group: http
-    mode: 0775
+    mode: '775'
     state: directory
 
 - name: Copy zaszi.net web root

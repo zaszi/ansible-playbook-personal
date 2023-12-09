@@ -4,7 +4,7 @@
     dest: /etc/modules-load.d/backlight.conf
     owner: root
     group: root
-    mode: 0644
+    mode: '644'
   when: ansible_hostname == "shale"
 
 - name: Install udev rules for backlight
@@ -14,5 +14,5 @@
     dest: /etc/udev/rules.d/90-backlight.rules
     owner: root
     group: root
-    mode: 0644
+    mode: '644'
   when: ansible_hostname == "slate"
