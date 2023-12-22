@@ -4,7 +4,7 @@
 timezone: Europe/Brussels
 dracut: true
 mirrors:
-  - Germany
+  - Belgium
 
 ### COMMON - PACKAGES ###
 
