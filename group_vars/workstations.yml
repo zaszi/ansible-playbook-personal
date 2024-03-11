@@ -128,7 +128,7 @@ packages_aur:
   - freetube-bin
   - gruvbox-dark-gtk
   - pandoc-bin
-  - postman-bin
+  - bruno-bin
   - pulseaudio-ctl
   - shellcheck-bin
   - spotify
