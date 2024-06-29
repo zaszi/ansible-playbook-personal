@@ -47,6 +47,7 @@ packages:
   - jp2a
   - jq
   - ldns
+  - lib32-pipewire
   - linux-headers
   - lolcat
   - lua-language-server
@@ -114,8 +115,11 @@ packages:
   - unzip
   - waybar
   - wine
+  - wireplumber
   - wl-clipboard
   - xdg-user-dirs
+  - xdg-desktop-portal
+  - xdg-desktop-portal-wlr
   - xorg-server-xwayland
   - xorg-xeyes
   - yamllint
