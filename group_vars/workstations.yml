@@ -80,6 +80,7 @@ packages:
   - python
   - python-adblock
   - python-passlib
+  - python-pynitrokey
   - pwgen
   - qrencode
   - qt5-wayland
