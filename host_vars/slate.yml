@@ -4,11 +4,9 @@
 extra_packages:
   - bluez
   - bluez-utils
-  - intel-ucode
-  - light
+  - brightnessctl
   - pulseaudio-bluetooth
-extra_packages_aur:
-  - rtl8821ce-dkms-git
+extra_packages_aur: []
 extra_services:
   - bluetooth.service
 
@@ -33,14 +31,12 @@ wg_address6: fdd7:885c:bf88::2/48
 
 ### TASKS ###
 
-cpu: "intel"
+cpu: "amd"
 passthrough: false
 passthrough_options: []
 
 ### DOTFILES ###
 
 sway_host_config: |
-  set $brightness_up light -A 5 -s sysfs/backlight/intel_backlight
-  set $brightness_down light -U 5 -s sysfs/backlight/intel_backlight
-  output eDP-1 mode 1920x1080 pos 0 0
-  output HDMI-A-1 mode 2560x1080@74.944Hz pos 1920 0
+  set $brightness_up brightnessctl set 10%+
+  set $brightness_down brightnessctl set 10%-
