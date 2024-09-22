@@ -14,6 +14,7 @@ packages:
   - android-tools
   - android-udev
   - ansible
+  - ansible-language-server
   - ansible-lint
   - arch-install-scripts
   - bash-completion
@@ -28,7 +29,6 @@ packages:
   - dkms
   - discord
   - dosfstools
-  - eid-mw
   - eza
   - fd
   - figlet
@@ -128,7 +128,6 @@ packages:
   - zip
 packages_aur:
   - ansible-aur
-  - ansible-language-server
   - freetube-bin
   - gruvbox-dark-gtk
   - pandoc-bin
