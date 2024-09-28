@@ -5,8 +5,10 @@ extra_packages:
   - bluez
   - bluez-utils
   - brightnessctl
+  - impala
   - pulseaudio-bluetooth
-extra_packages_aur: []
+extra_packages_aur:
+  - bluetui
 extra_services:
   - bluetooth.service
 
