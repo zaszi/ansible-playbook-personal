@@ -54,7 +54,7 @@ users:
     pass: zaszi/users/root
     shell: /bin/bash
     groups: []
-    pubkey: ""
+    pubkey: ''
   - name: zaszi
     pass: zaszi/users/zaszi
     shell: /bin/bash
@@ -66,8 +66,9 @@ users:
 
 ### COMMON - NETWORK ###
 
-wired: true
-wireless: false
+ethernet: true
+wlan: false
+wwan: false
 bridge: false
 bridge_interfaces: []
 firewall_tcp: []
@@ -107,4 +108,4 @@ sway: false
 syncthing: false
 tmux: true
 weechat: false
-weechat_backup_location: ""
+weechat_backup_location: ''

@@ -12,7 +12,7 @@ extra_packages_aur:
 extra_services:
   - bluetooth.service
 
-wireless: true
+wlan: true
 firewall_tcp:
   # SSH
   - 22
@@ -33,7 +33,7 @@ wg_address6: fdd7:885c:bf88::2/48
 
 ### TASKS ###
 
-cpu: "amd"
+cpu: 'amd'
 passthrough: false
 passthrough_options: []
 
