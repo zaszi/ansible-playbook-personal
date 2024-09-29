@@ -1,9 +1,0 @@
----
-- name: Blacklist rtw88_8821ce kernel module
-  ansible.builtin.lineinfile:
-    path: /etc/modprobe.d/wireless.conf
-    line: "blacklist rtw88_8821ce"
-    owner: root
-    group: root
-    mode: '644'
-    create: true

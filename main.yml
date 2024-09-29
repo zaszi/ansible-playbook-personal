@@ -1,5 +1,4 @@
 ---
-
 - name: Deploy common to all hosts
   hosts: all
   become: true
@@ -33,14 +32,6 @@
     - name: Add Home Assistant user for remote shutdown
       ansible.builtin.include_tasks: tasks/hass.yml
   tags: shale
-
-- name: Run specific tasks for slate
-  hosts: slate
-  become: true
-  tasks:
-    - name: Add RTL8821ce wireless network driver
-      ansible.builtin.include_tasks: tasks/rtl8821ce.yml
-  tags: slate
 
 - name: Deploy VPN to galena and slate
   hosts: galena slate
