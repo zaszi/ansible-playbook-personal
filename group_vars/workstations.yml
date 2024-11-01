@@ -27,7 +27,6 @@ packages:
   - cups
   - cups-pdf
   - dkms
-  - discord
   - dosfstools
   - eza
   - fd
@@ -69,12 +68,11 @@ packages:
   - picocom
   - pigz
   - pipewire
+  - pipewire-pulse
   - pkgfile
   - pkgstats
   - playerctl
   - prettier
-  - pulseaudio
-  - pulseaudio-alsa
   - pulsemixer
   - pv
   - python
@@ -132,10 +130,10 @@ packages_aur:
   - gruvbox-dark-gtk
   - pandoc-bin
   - bruno-bin
-  - pulseaudio-ctl
   - shellcheck-bin
   - spotify
   - telegram-desktop-bin
+  - vesktop-bin
   - wl-clipboard-x11
   - yay
 
