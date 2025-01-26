@@ -1,6 +1,5 @@
 [workstations]
 shale ansible_host=shale.lan
-slate ansible_host=slate.lan
 
 [servers]
 gabbro ansible_host=gabbro.lan

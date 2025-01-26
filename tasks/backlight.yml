@@ -5,14 +5,3 @@
     owner: root
     group: root
     mode: '644'
-  when: ansible_hostname == "shale"
-
-- name: Install udev rules for backlight
-  become: true
-  ansible.builtin.copy:
-    src: udev-backlight.rules
-    dest: /etc/udev/rules.d/90-backlight.rules
-    owner: root
-    group: root
-    mode: '644'
-  when: ansible_hostname == "slate"
